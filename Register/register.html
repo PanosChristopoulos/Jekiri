@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Exercise</title>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="register.css">
 </head>
 <body>
+<div class=registry>
 
-<h1>Εγγραφή</h1>
-<form>
-<label for="FirstName">Όνομα Χρήστη</label>
-<input id="FirstName" type="text" name="FirstName" placeholder="Όνομα" required>
-<p></p>
-<label for="Email">Email:</label>
-<input id="Email" type="Email" name="Email" required="" placeholder="E-mail">
-<p></p>
-<label for="Password">Κωδικός</label>
-<input id="Password" type="Password" name="Password" pattern=".{5,}" required title="Ο κωδικός πρέπει να περιέχει τουλάχιστον 5 χαρακτήρες" placeholder="Κωδικός">
-<p></p>
 
-<p>Συμφωνώ με τους Όρους Χρήσης
-<input type="checkbox" name="Agree" required="required"  oninvalid="this.setCustomValidity('Πρέπει να αποδεχτείτε τους Όρους Χρήσης για να συνεχίσετε ')"
-       onvalid="this.setCustomValidity('')"></p>
-<p></p>
-<input type="Submit" name="Submit">
+	<h1>Εγγραφή</h1>
+	<form>
+<p>Όνομα Χρήστη</p>
+<input id="FirstName" type="text" name="FirstName"  required oninvalid="this.setCustomValidity('Το Όνομα Χρήστη είναι απαραίτητο')">
+<p>E-mail</p>
+<input id="E-mail" type="Email" name="Email" required=""  oninvalid="this.setCustomValidity('Παρακαλώ εισάγετε μία έγκυρη διεύθυνση E-mail')">
+<p>Κωδικός</p>
+<input id="Password" type="Password" name="Password"  >
+<p>Επανάληψη Κωδικού</p>
+<input id="PasswordRe" type="Password" name="PasswordRe"  >
+
+
+
+<input type="Submit" name="Register">
 
 
 </form>
+</div>
 
 </body>
 </html>
