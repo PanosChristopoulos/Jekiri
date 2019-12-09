@@ -1,0 +1,59 @@
+html, body { 
+	height: 100%; padding: 0; margin: 0;
+	font-family: sans-serif; }
+div { 
+	width: 50%; height: 50%; float: left; 
+}
+#div1 {
+	 background: yellow;
+	 background-image: url("dash.jpg");
+	 background-size: contain;
+	 background-repeat: no-repeat;
+	 background-position: center;
+	 text-align: center;
+	 vertical-align: middle;
+	 line-height: 180px;
+	 color:#911f17; 
+	  }
+
+
+#div2 { 
+	background: pink;
+	background-image: url("map.jpg");
+	 background-size: contain;
+	 background-repeat: no-repeat;
+	 background-position: center;
+	 text-align: center;
+	 vertical-align: middle;
+	 line-height: 180px;
+	 color:#911f17;   }
+#div3 { 
+	background: blue;
+	background-image: url("delete.png");
+	 background-size: contain;
+	 background-repeat: no-repeat;
+	 background-position: center;
+	 text-align: center;
+	 vertical-align: middle;
+	 line-height: 180px; 
+	 color:#911f17; 
+	 }
+#div4 {
+	background: red;
+	background-image: url("export.png");
+	 background-size: contain;
+	 background-repeat: no-repeat;
+	 background-position: center;
+	 text-align: center;
+	 vertical-align: middle;
+	 line-height: 180px;
+	 color:#911f17;  
+	 }
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
