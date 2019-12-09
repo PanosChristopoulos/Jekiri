@@ -1,9 +1,10 @@
-
 body{
-	margin: 0;
-	padding: 0;
-	background-color:#154e99;
-	background-position: center;
+	margin: 100px  ;
+	padding: 200px 100px;
+	background-image: url(bg.jpg);
+	background-size: cover;
+
+	background-position: top ;
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-family: sans-serif;
