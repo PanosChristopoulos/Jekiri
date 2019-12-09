@@ -12,7 +12,7 @@ body{
 .registry{
 	
 	width: 320px;
-	height: 530px;
+	height: 580px;
 	background: #000;
 	color:#fff;
 	top:50%;
@@ -69,20 +69,20 @@ body{
 	border-radius: 20px;
 }
 
-.loginbox input[type="submit"]:hover
+.registry input[type="submit"]:hover
 {	
 	cursor:pointer;
 	background:#ffc107;
 	color:#000;
 }
 
-.loginbox a{
+.registry a{
 	text-decoration: none;
 	font-size: 12px;
 	line-height: 20px;
 	color:darkgrey;
 }
 
-.loginbox a:hover {
+.registry a:hover {
 	color:#ffc107;
 }
