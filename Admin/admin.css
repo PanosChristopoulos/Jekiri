@@ -5,7 +5,7 @@ div {
 	width: 50%; height: 50%; float: left; 
 }
 #div1 {
-	 background: yellow;
+	 background: #ffffff;
 	 background-image: url("dash.jpg");
 	 background-size: contain;
 	 background-repeat: no-repeat;
@@ -18,7 +18,7 @@ div {
 
 
 #div2 { 
-	background: pink;
+	background: #5ea8af;
 	background-image: url("map.jpg");
 	 background-size: contain;
 	 background-repeat: no-repeat;
@@ -28,7 +28,7 @@ div {
 	 line-height: 180px;
 	 color:#911f17;   }
 #div3 { 
-	background: blue;
+	background: #257985;
 	background-image: url("delete.png");
 	 background-size: contain;
 	 background-repeat: no-repeat;
@@ -39,7 +39,7 @@ div {
 	 color:#911f17; 
 	 }
 #div4 {
-	background: red;
+	background: #ff4447;
 	background-image: url("export.png");
 	 background-size: contain;
 	 background-repeat: no-repeat;
