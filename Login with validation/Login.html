@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<script src="validation.js"></script>
+</head>
+<body>
+<div class=loginbox>
+<img src="avatar.jpg" class="avatar">
+<h1>Σύνδεση</h1>
+<div id="error_message"></div>
+
+<form id="myform" onsubmit="return validation()">
+	<p>Username</p>
+	<input type="Text" id="Username" name="" placeholder="Username" >
+	<p>Password</p>
+	<input type="Password" id="Password" name="" placeholder="Password" >
+	<input type="submit" name="" value="Login">
+	
+	<a href="../Register/register.html">Register</a>
+
+</form>
+
+</div>
+</body>
+</html>
