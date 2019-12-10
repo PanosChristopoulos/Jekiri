@@ -7,7 +7,7 @@ function validation(){
  	error_message.style.padding = "10px";
 
  	if(password.length < 8){
- 		text = "Please enter at least 8 haracters";
+ 		text = "Please enter at least 8 characters";
  		error_message.innerHTML = text;
  		return false;
  	}
