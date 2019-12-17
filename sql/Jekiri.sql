@@ -14,3 +14,16 @@ INSERT INTO user(username, email, kwdikos) values
 ('eris', 'trelakos@mfmndsk.ce', 'sfdafasddsa'),
 ('mhtsos', 'mhtsoooooo@mhtso.mhtso', 'fsdanjdfiasfsdak');
 
+CREATE TABLE action(
+heading INT NOT NULL,
+activitytype VARCHAR(255) NOT NULL,
+activityconfidence INT,
+activitytimestampMs BIGINT,
+verticalAccuracy INT DEFAULT NULL,
+velocity INT DEFAULT 0,
+accuracy INT DEFAULT 0,
+longtitudeE7 BIGINT,
+latitudeE7 BIGINT,
+altitude INT,
+timestampMs BIGINT
+)
