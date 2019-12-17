@@ -1,0 +1,50 @@
+body{
+background-color: #a1e0e3
+}
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  margin-top: 120px;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 30px;
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.ecoscore{
+	margin-left: 160px; 
+	margin-top:20px;
+}
+.map {
+  margin-left: 160px; 
+  margin-top:40px;
+  margin-right:100px;
+  padding: 250px;
+  background-color: white;
+}
+
+.ecoscore{
+	margin-left: 160px; 
+	margin-top:120px;
+	margin-right: 790px;
+	border: 2px dashed white;
+}
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
