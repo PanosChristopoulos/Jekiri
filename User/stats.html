@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Στατιστικά</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="stats.css">
+</head>
+<body>
+
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = 'userprof.html';">
+  <i class="fas fa-user-circle"></i>
+  Username
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="help.html">Βοήθεια</a>
+  <a href="info.html">Πληροφορίες</a>
+  <a href="credits.html">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+<div class="statshead">
+	
+
+</div>
+
+
+<div class="agraph">Γράφημα score/είδος</div>
+
+<div class="bgraph">Γράφημα εγγραφές/μέρα</div>
+
+<div class="cgraph">Γράφημα εγγραφές/ώρα</div>
+
+</body>
+</html>

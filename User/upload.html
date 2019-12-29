@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="upload.css">
+</head>
+<body>
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = 'userprof.html';">
+  <i class="fas fa-user-circle"></i>
+  Username
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="help.html">Βοήθεια</a>
+  <a href="info.html">Πληροφορίες</a>
+  <a href="credits.html">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+<div class="uploadhead"> 
+</div>
+
+<input type="file" id="file">
+<label for="file">Επιλέξτε ένα αρχείο .json <i class="fas fa-file-import"></i>  </label>
+
+<div class="uploadhelp">
+  <h3>Βοήθεια</h3>
+  <ul>
+    <li>Συνδεθείτε στο <a href="takeout.google.com">Google Takeout</a></li>
+    <li>Στην καρτέλα "Επιλέξτε δεδομένα για συμπερίληψη" πατήστε Κατάργηση επιλογής όλων</li>
+    <li>Στη συνέχεια, επιλέξτε το στοιχείο Ιστορικό Τοποθεσίας</li>
+    <li>Επιλέξτε "Δημιουργία Αρχείου</li>
+    <li>Το αρχείο βρίσκεται στο mail σας, αποσυμπιέστε το και διαλέξτε το αρχείο <br> .json του ιστορικού περιήγησης στο παράθυρο που θα ανοίξει πατώντας <br> το παρακάτω κουμπί</li>
+  </ul>
+
+</div>
+
+
+
+</body>
+</html>
