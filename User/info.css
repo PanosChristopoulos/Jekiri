@@ -119,22 +119,8 @@ html {
   .sidenav a {font-size: 18px;}
 }
 
-.avatar{    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    position: absolute;
-    top: 130px;
-    left: 420px;
-}
-
-.onoma{
-position: absolute;
-    top: 130px;
-    left: 620px;}
-
-
-.userdata{
-position: absolute;
-    top: 190px;
-    left: 630px;
+.infotext{
+  position: absolute;
+  top:100px;
+  left:400px;
 }

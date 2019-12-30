@@ -158,14 +158,32 @@ html {
   height:25px;
 }
 
-#map{
+.mapbutton
+{
   position: absolute;
   background-color: white;
   left:380px;
   top: 300px;
-  border:2px dashed black;
+  border:2px groove black;
   padding:300px;
   margin-bottom:200px;
+  background-image: url("mapbg.jpg");
+
+}
+
+
+.maptrigger {
+      background-color: unset;
+  border: none;
+  color: white; 
+  padding: 20px 30px; 
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 40px; 
+}
+
+.maptrigger:hover {
+  background-color: RoyalBlue;
 }
 
 #leaderboard{
