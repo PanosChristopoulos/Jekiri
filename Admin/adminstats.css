@@ -1,0 +1,100 @@
+* {
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+  -moz-transition-property: all;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+}
+
+body{
+  background:#1b1b2b;
+  padding:75px;
+  text-align:center;
+  font-family: 'Oswald', sans-serif;
+}
+
+h1{
+  color:#c0c0c0;
+  font-weight:100;
+}
+
+.btn{
+  color:#999;
+  background:rgba(0, 0, 0, 0.5);
+  padding:25px 70px;
+  font-size:12px;
+  text-decoration:none;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.btn:hover{
+  border:none;
+  background:rgba(0, 0, 0, 0.4);
+  background:#fff;
+  padding:40px 85px; #000;
+  color:#1b1b1b;
+}
+
+#graphA{
+position: absolute;
+    height: 190px;
+    width: 400px;
+    top: 200px;
+    left: 200px;
+    border: 1px groove black;
+    background-color: white;
+}
+
+
+#graphB{
+    position: absolute;
+    height: 190px;
+    width: 400px;
+    top: 200px;
+    left: 750px;
+    border: 1px groove black;
+    background-color: white;
+}
+
+
+#graphC {
+    position: absolute;
+    height: 220px;
+    width: 500px;
+    top: 450px;
+    left: 200px;
+    border: 1px groove black;
+    background-color: white;
+}
+
+#graphD {
+    position: absolute;
+    height: 200px;
+    width: 350px;
+    top: 450px;
+    left: 800px;
+    border: 1px groove black;
+    background-color: white;
+}
+
+#graphE {
+    position: absolute;
+    height: 190px;
+    width: 400px;
+    top: 710px;
+    left: 200px;
+    border: 1px groove black;
+    background-color: white;
+    margin-bottom: 20px;  
+}
+
+#graphF{
+   position: absolute;
+    height: 190px;
+    width: 400px;
+    top: 710px;
+    left: 750px;
+    border: 1px groove black;
+    background-color: white;
+}
