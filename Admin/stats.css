@@ -36,17 +36,3 @@ h1{
   color:#1b1b1b;
 }
 
-#map{
-position: absolute;
-    height: 600px;
-    /* width: 300px; */
-    /* top: 220px; */
-    /* bottom: 20px; */
-    left: 230px;
-    right: 200px;
-    margin-top: 100px;
-    margin-bottom: 40px;
-    border: 1px groove black;
-    background-color: white;
-
-}
