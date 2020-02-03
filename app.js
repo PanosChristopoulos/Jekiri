@@ -11,8 +11,8 @@ var cookieParser = require('cookie-parser');
 
 mongoose.connect("mongodb://localhost:27017/local");
 
-
-
+var data = require('./data/Location_History.json')
+console.log(data);
 app.use(session({
 	name: 'session',
 	saveUninitialized: true,
@@ -26,7 +26,7 @@ app.use(session({
 var sess;
 var dataSchema = new mongoose.Schema({
 	username: String,
-	data: String
+	data: Object,
 });
 
 var userData =mongoose.model("userData",dataSchema);
@@ -36,7 +36,8 @@ var userSchema = new mongoose.Schema({
 	username: String,
 	email: String,
 	password: String,
-	uniqueId: String
+	uniqueId: String,
+
 });
 
 
@@ -86,12 +87,31 @@ app.get("/",function(req,res){
 
 app.post("/user/upload",function(req,res){
 
+
 	if(req.files){
 		
 		var mfile = req.files.filef;
 		var filename = mfile.name;
 		console.log(mfile);
-		
+
+		var contents = fs.readFileSync("./data/"+filename);
+
+		userData.create(
+			{
+				username: sess.username,
+				data : contents
+
+				},function(err, userData){
+					if (err){
+						console.log(err);
+							}
+					else
+					{
+						console.log(userData);
+					}
+				}			
+			)
+
 		mfile.mv("./data/"+filename,function(err){
 			if(err)
 				throw err;
@@ -114,7 +134,7 @@ app.get("/user/upload",function(req,res){
 
 app.post("/",function(req,res,next){
 	sess = req.session;
-	
+	count(data);
 	var	username = req.body.Username;
 	 var password = req.body.Password;
 	
