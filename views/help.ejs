@@ -1,0 +1,65 @@
+
+<html>
+<head>
+	<title>Αρχική</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="help.css">
+</head>
+<body>
+
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = 'userprof.html';">
+  <i class="fas fa-user-circle"></i>
+  Username
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="help.html">Βοήθεια</a>
+  <a href="info.html">Πληροφορίες</a>
+  <a href="credits.html">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+<div class="helptext">
+  <h1>Βοήθεια</h1>
+  <p>Αμέσως μετά τη σύνδεση στο σύστημά μας, θα ανακατευθυνθείτε 
+    στην Αρχική <br>Σελίδα. Για να έχετε πρόσβαση στα δεδομένα σας, πρέπει 
+    να περιηγηθείτε στη <br>σελίδα <a href="upload.html">Upload</a>. Αφού ακολουθήσετε τις
+    σχετικές οδηγίες για το ανέβασμα του <br> αρχείου σας με κατάληξη json, μπορείτε να επιστρέψετε στην
+    Αρχική. Στη σελίδα <br> αυτή, πατώντας το κουμπί του χάρτη μπορείτε να δείτε τα δεδομένα Πληθοπορισμού <br>σας,
+    το Score Οικολογικών Μεταφορών σας, τα δεδομένα Εγγραφών σας και τη θέση <br> σας στο Leaderboard σε σχέση με τους
+    υπόλοιπους χρήστες της εφαρμογής. Στη σελίδα <br> των στατιστικών, εμφανίζονται τα στοιχεία μεταφοράς σας ανά είδος,
+    ημέρα και ώρα. <br> Στη σελίδα της Επικοινωνίας μπορείτε επικοινωνήσετε με τους διαχειριστές της  <br>εφαρμογής, 
+    οι οποίοι θα σας απαντήσουν με e-mail σύντομα μετά το μήνυμά σας.
+
+
+
+  </p>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+<html>
+<head>
+	<title>Αρχική</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="info.css">
+</head>
+<body>
+
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = 'userprof.html';">
+  <i class="fas fa-user-circle"></i>
+  Username
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="help.html">Βοήθεια</a>
+  <a href="info.html">Πληροφορίες</a>
+  <a href="credits.html">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+
+<div class="infotext">
+  <h1>Πληροφορίες</h1>
+  <p>Το Jekiri είναι μία εφαρμογή Crowdsourcing, η οποία σχεδιάστηκε στα πλαίσια <br>
+    του μαθήματος Προγραμματισμός και Συστήματα στον Παγκόσμιο Ιστό του Τμήματος  <br>
+  Μηχανικών Ηλεκτρονικών Υπολογιστών και Πληροφορικής του Πανεπιστημίου Πατρών <br>
+  από τους φοιτητές <a href="https://github.com/PanosChristopoulos/">Παναγιώτη Χριστόπουλο</a>, 
+  <a href="https://github.com/jimkaselouris"> Δημήτρη Κασελούρη</a> και  <a href="https://github.com/milali21">Μίλτο Αλημίση</a>.<br>
+  Στο παρακάτω video του <a href="https://www.youtube.com/channel/UCW8sOROmPB830d2w6hVOjWw">Investor Trading Academy</a> μπορείτε να δείτε <br> τη χρησιμότητα των υπηρεσιών τέτοιου είδους:<br><br> <iframe width="420" height="345" src="https://www.youtube.com/embed/AkwhUOQ3nYg">
+</iframe><br>
+
+  <br>Μέσω των αρχείων καταγραφής τοποθεσίας της Google, το Jekiri επιτρέπει στο χρήστη να <br>αναλύει τις προσωπικές 
+  πληροφορίες μετακίνησής του μέσα στην πόλη της Πάτρας και στο <br>διαχειριστή τη διαχείριση των δεδομένων αυτών
+  για τη λύση προβλημάτων κυκλοφοριακής <br> συμφόρησης και κακής πεζοδρόμησης πάντα με σεβασμό στην Ιδιωτικότητα του Χρήστη.
+</p>
+</div>
+</body>
+</html>

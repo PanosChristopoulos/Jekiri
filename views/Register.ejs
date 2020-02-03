@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" type="text/css" href="register.css">
+	<script src="validation.js"></script>
+</head>
+<body>
+<div class=registry>
+
+
+	<h1>Εγγραφή</h1>
+	<div id="error_message"></div>
+	<form id="myform",action="/Register", method="POST", onsubmit="return validation()">
+<p>Όνομα Χρήστη</p>
+<input id="Username" type="text" name="FirstName"  required="" oninput="Borders()" >
+<p>E-mail</p>
+<input id="E-mail" type="Email" name="Email" oninput="Borders()" required  >
+<p>Κωδικός</p>
+<input id="Password" type="Password" name="Password" oninput="Borders()" >
+<p>Επανάληψη Κωδικού</p>
+<input id="PasswordRe" type="Password" name="PasswordRe" oninput="Borders()" >
+
+
+
+<input type="Submit" name="Register">
+<a href="/">Έχω ήδη λογαριασμό, θέλω να συνδεθώ</a>
+

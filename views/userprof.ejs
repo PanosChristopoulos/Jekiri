@@ -1,0 +1,58 @@
+
+<html>
+<head>
+	<title>Profile</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+  <base href="/">
+	<link rel="stylesheet" type="text/css" href="userprof.css">
+</head>
+<body>
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = '/user/userprof';">
+  <i class="fas fa-user-circle"></i>
+<%= name %>
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="/user/help">Βοήθεια</a>
+  <a href="/user/info">Πληροφορίες</a>
+  <a href="/user/credits">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="/user"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="/user/stats"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="/user/upload"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="/user/contact"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+
+<img src="avatar.jpg" class="avatar">
+
+<h1 class="onoma"><%= name %></h1>
+
+<div class="userdata">
+
+<h4>Ημερομηνία Εγγραφής:</h4>
+<h4>Eco-Score<i class="fab fa-pagelines" style="color:green" ></i>:</h4>
+<h4>Κατάταξη:</h4>
+
+
+</div>
+</body>
+</html>
