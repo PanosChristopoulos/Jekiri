@@ -12,7 +12,7 @@ var cookieParser = require('cookie-parser');
 mongoose.connect("mongodb://localhost:27017/local");
 
 var data = require('./data/Location_History.json')
-console.log(data);
+var dedomena;
 app.use(session({
 	name: 'session',
 	saveUninitialized: true,
@@ -94,12 +94,12 @@ app.post("/user/upload",function(req,res){
 		var filename = mfile.name;
 		console.log(mfile);
 
-		var contents = fs.readFileSync("./data/"+filename);
+		var contents = fs.readFileSync("./Location_History.json");
 
 		userData.create(
 			{
 				username: sess.username,
-				data : contents
+				data : JSON.parse(contents)
 
 				},function(err, userData){
 					if (err){
@@ -134,7 +134,7 @@ app.get("/user/upload",function(req,res){
 
 app.post("/",function(req,res,next){
 	sess = req.session;
-	count(data);
+	
 	var	username = req.body.Username;
 	 var password = req.body.Password;
 	
@@ -212,13 +212,57 @@ app.get("/user/contact",function(req,res){
 })
 
 app.get("/user",function (req, res){
+	userData.find({username:sess.username})
+	.select('data -_id')
+	.exec(function(err,data){
+		
+		var loc=data[0];
+		var datas = JSON.stringify(loc);
+		var datas2 = JSON.parse(datas);
+		var mesa =datas2.data;
+		var locs= mesa.locations;
+		var arraylength=locs.length;
+		let latitudes = [];
+		let longitudes = [];
+		
+		for(var i=0; i<arraylength;i++){
+			var latitude = locs[i].latitudeE7;
+			latitudes.push(latitude);
+		}
+
+		for(var i=0; i<arraylength;i++){
+			var longitude= locs[i].longitudeE7;
+			longitudes.push(longitude);
+		}
+		let datat = [];
+		for(var i=0; i<arraylength;i++){
+			var o1 ={lat: latitudes[i],lng: longitudes[i],count : Math.floor(Math.random() * 9)};
+			datat.push(o1);
+		}
+
+		let testData = {
+			max:8,
+			data: datat
+		}
+		dedomena = testData;
+		var stringDedomena=JSON.stringify(dedomena);
+		var jsonDedomena = JSON.parse(stringDedomena);
+		console.log(jsonDedomena);
+		
+		fs.writeFile("output.json", stringDedomena, 'utf8', function (err) {
+    if (err) {
+        console.log("An error occured while writing JSON Object to File.");
+        return console.log(err);
+    }
+	});
 	sess = req.session;
 	if(sess.username){
-	 return res.render("user",{name:sess.username});
+	 return res.render("user",{name:sess.username,data:jsonDedomena})
 	}
 	else{
 	 return res.render("Login");
 	}
+	})
 });
 
 
