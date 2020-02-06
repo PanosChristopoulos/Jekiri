@@ -156,7 +156,17 @@ html {
   border-radius: 25px;
   width:120px;
   height:25px;
+  text-align: center;
 }
+
+#updatetext{
+  position: relative;
+  bottom: 30px;
+
+
+
+}
+
 
 .mapbutton
 {
