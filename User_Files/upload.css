@@ -166,14 +166,15 @@ label:hover{
 }
 
 .jsondatamap{
-height: 400px;
+    height: 400px;
     width: 550px;
     position: absolute;
     top: 700px;
     left: 500px;
     bottom:100px;
     border: 1px groove black;
-    background-color: white;
+    background-image:url("zarou.jpg");
+    
 
 }
 
@@ -207,4 +208,23 @@ height: 400px;
         -ms-transform: scale(1.3);
         transform: scale(1.3);
 
+}
+
+
+  .maptrigger {
+    position: relative;
+    top: 150px;
+    left: 200px;
+    background-color: unset;
+    border: none;
+    color: white;
+    padding: 20px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+
+.maptrigger:hover {
+background-color: #829e89;
 }
