@@ -4,6 +4,13 @@
 	<title>Αρχική</title>
 	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="user.css">
+
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+    
+
 </head>
 <body>
 
@@ -65,15 +72,22 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 <div id="leaderboard">
 	<i class="fas fa-crown" style="color:gold"></i>
-	<b> Leaderboard</b>
-	<ol>
-		<li style="color:gold"><i class="fas fa-medal"></i></li>
-		<li style="color:silver"><i class="fas fa-medal"></i></li>
-		<li style="color:brown"><i class="fas fa-medal"></i></li>
-		<li></li>
-		<li></li>
-
-	</ol>
+	Leaderboard
 </div>
+
+ <div id="filter">
+            <p id="parag1">Επιλογή ημερομηνίας</p><br>
+            <label for="startdate">Από</label>
+            <input type="date" name="startdate">
+            <label for="enddate">Έως</label>
+            <input type="date" name="enddate"><br><br>
+            <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+
+
+
+    </div>
+
+
+
 </body>
 </html>
