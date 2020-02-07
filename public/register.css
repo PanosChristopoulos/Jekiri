@@ -12,7 +12,7 @@ body{
 .registry{
 	
 	width: 320px;
-	height: 580px;
+	height: 650px;
 	background: #000;
 	color:#fff;
 	top:50%;
@@ -30,6 +30,8 @@ body{
 }
 
 .h1{
+	position:absolute;
+	top:10px;
 	margin: 0;
 	padding: 0 0 20px;
 	text-align: center;
@@ -81,6 +83,8 @@ body{
 	font-size: 12px;
 	line-height: 20px;
 	color:darkgrey;
+	position: relative;
+    top: 60px;
 }
 
 .registry a:hover {

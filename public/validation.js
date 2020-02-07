@@ -10,48 +10,50 @@ function validation(){
 	var email2 = document.getElementById("E-mail");
 	var text;
 
- 	error_message.style.padding = "10px";
+	 error_message.style.padding = "10px";
+	 error_message.style.position = "absolute";
+	 error_message.style.bottom = "100px";
  	error_message.style.color = "red";
 
  	if(password.length < 8){
- 		text = "Password must be at least 8 characters";
+ 		text = "Ο κωδικός πρέπει να περιέχει πάνω από 8 χαρακτήρες";
  		password2.style.border="2px solid red"
  		error_message.innerHTML = text;
  		return false;
  	}
  	else if(password.search(/[0-9]/)== -1){
- 		text = "Password must have at least one numeric value";
+ 		text = "Ο κωδικός πρέπει να έχει τουλάχιστον 1 αριθμό";
  		password2.style.border="2px solid red"
  		error_message.innerHTML = text;
  		return false;
  	}
  	else if(password.search(/[A-Z]/)== -1){
- 		text = "Password must have at least one UpperCase letter";
+ 		text = "Ο κωδικός πρέπει να έχει τουλάχιστον 1 κεφαλαίο γράμμα";
  		password2.style.border="2px solid red";
  		error_message.innerHTML = text;
  		return false;
  	}
  	else if(password.search(/[!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]/)== -1){
- 		text = "Password must have at least one Symbol";
+ 		text = "Ο κωδικός πρέπει να έχει τουλάχιστον ένα σύμβολο";
  		password2.style.border="2px solid red";
  		error_message.innerHTML = text;
  		return false;
  	}
  	else if(passwordRe !== password){
- 		text = "Two passwords don't match";
+ 		text = "Οι δύο κωδικοί δεν είναι ίδιοι";
  		passwordRe2.style.border="2px solid red";
  		password2.style.border="2px solid red";
  		error_message.innerHTML = text;
  		return false;
  	}
  	else if(email.search(/[@]/)== -1){
- 		text = "Please enter a valid email";
+ 		text = "Παρακαλώ εισάγετε μία σωστή διεύθυνση e-mail";
  		email2.style.border="2px solid red";
  		error_message.innerHTML = text;
  		return false;
  	}
  	else if(email.search(/[.]/)== -1){
- 		text = "Please enter a valid email";
+ 		text = "Παρακαλώ εισάγετε μία σωστή διεύθυνση e-mail";
  		email2.style.border="2px solid red";
  		error_message.innerHTML = text;
  		return false;
