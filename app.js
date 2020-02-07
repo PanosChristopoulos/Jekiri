@@ -8,7 +8,7 @@ var fs = require('fs');
 var mongoose = require("mongoose");
 var upload	= require('express-fileupload');
 var cookieParser = require('cookie-parser');
-
+var ecoScoreGlobal = 0;
 mongoose.connect("mongodb://localhost:27017/local");
 
 var data = require('./data/Location_History.json')
@@ -27,6 +27,8 @@ var sess;
 var dataSchema = new mongoose.Schema({
 	username: String,
 	data: Object,
+	date: Date,
+	eco : Number,
 });
 
 var userData =mongoose.model("userData",dataSchema);
@@ -95,11 +97,12 @@ app.post("/user/upload",function(req,res){
 		console.log(mfile);
 
 		var contents = fs.readFileSync("./Location_History.json");
-
+		userData.updateOne({ username : sess.username }, { $set: { date : Date.now() } });
 		userData.create(
 			{
 				username: sess.username,
-				data : JSON.parse(contents)
+				data : JSON.parse(contents),
+				date : Date.now()
 
 				},function(err, userData){
 					if (err){
@@ -107,17 +110,18 @@ app.post("/user/upload",function(req,res){
 							}
 					else
 					{
-						console.log(userData);
+						res.redirect("/user");
+						console.log(userData.date);
 					}
 				}			
 			)
 
-		mfile.mv("./data/"+filename,function(err){
-			if(err)
-				throw err;
-			else
-				res.redirect("/user");
-		})
+	//	mfile.mv("./data/"+filename,function(err){
+		//	if(err)
+		//		throw err;
+		//	else
+		//		res.redirect("/user");
+		//})
 	}
 
 });
@@ -212,6 +216,72 @@ app.get("/user/contact",function(req,res){
 })
 
 app.get("/user",function (req, res){
+	sess = req.session;
+
+	userData.find({username:sess.username})
+	.select('date -_id')
+	.exec(function(err,data){
+		var date = data[3].date;
+		var formalDate = date.toUTCString();
+		console.log(date);
+	
+	userData.find({username:sess.username})
+	.select('data -_id')
+	.exec(function(err,data){
+
+		var types = [];
+		var activities = [];
+		var accessdata = data[0];
+		var locations = accessdata.data.locations;
+		var arraylength = locations.length;
+		var countEco = 0 ;
+		var countVeh = 0;
+		var countbs = 0;
+
+		for(var i=0; i<arraylength; i++)
+		{
+				
+			var locs = locations[i] ; 
+			
+			//.activity[j].activity[k].type;
+			
+				activity = locs.activity;
+				if(activity){
+				activities.push(activity);
+				}
+			}
+
+				var	arraylength2 = activities.length;
+				for(var j=0; j<arraylength2; j++)
+				{
+				type = activities[j][0].activity[0].type;
+				
+				if(type != 'UNKNOWN')
+				types.push(type);
+					
+				}
+				
+					var arraylength3= types.length;
+					console.log(arraylength3);
+					for(var k=0; k<arraylength3; k++)
+					{
+						ecoOnes= ['ON_FOOT' , 'WALKING' , 'RUNNING' , 'ON_BICYCLE'];
+						vehOnes=['IN_VEHICLE' , 'IN_ROAD_VEHICLE' , 'IN_RAIL_VEHICLE' , 'IN_FOUR_WHEELER_VEHICLE' , 'IN_CAR' ]
+						
+						if(ecoOnes.some(res=>types[k].includes(res))){
+							countEco = countEco + 1;
+						}
+						else if(vehOnes.some( res=>types[k].includes(res))){
+							countVeh = countVeh + 1;
+						}
+						else
+							countbs = countbs +1 ;
+					}
+				ecoScoreGlobal = ((countEco / (countEco + countVeh))*100) | 0;
+
+			userData.updateOne({ username : sess.username }, { $set: { eco: ecoScoreGlobal } });	
+	
+
 	userData.find({username:sess.username})
 	.select('data -_id')
 	.exec(function(err,data){
@@ -222,46 +292,46 @@ app.get("/user",function (req, res){
 		var mesa =datas2.data;
 		var locs= mesa.locations;
 		var arraylength=locs.length;
-		let latitudes = [];
-		let longitudes = [];
 		
-		for(var i=0; i<arraylength;i++){
-			var latitude = locs[i].latitudeE7;
-			latitudes.push(latitude);
-		}
+
+		times = [];
 
 		for(var i=0; i<arraylength;i++){
-			var longitude= locs[i].longitudeE7;
-			longitudes.push(longitude);
+			var time = locs[i].timestampMs;
+			times.push(time);
 		}
-		let datat = [];
-		for(var i=0; i<arraylength;i++){
-			var o1 ={lat: latitudes[i],lng: longitudes[i],count : Math.floor(Math.random() * 9)};
-			datat.push(o1);
-		}
-
-		let testData = {
-			max:8,
-			data: datat
-		}
-		dedomena = testData;
-		var stringDedomena=JSON.stringify(dedomena);
-		var jsonDedomena = JSON.parse(stringDedomena);
-		console.log(jsonDedomena);
 		
-		fs.writeFile("output.json", stringDedomena, 'utf8', function (err) {
-    if (err) {
-        console.log("An error occured while writing JSON Object to File.");
-        return console.log(err);
-    }
-	});
-	sess = req.session;
+		for(var i=0; i<arraylength;i++){
+			var min = times[0];
+			var max = times[0];
+			if(times[i]<min)
+				min = times[i];
+			else if(times[i]>max)
+				max = times[i];
+
+
+		}
+		
+		var minDate = new Date(parseInt(min));
+		var maxDate = new Date(parseInt(max));
+		var minDate2 = minDate.toDateString();
+		var maxDate2 = maxDate.toDateString();
+	
+	userData.find({})
+	.select('eco -_id')
+	.exec(function(err,data){		
+	console.log(data);
+		
+		
 	if(sess.username){
-	 return res.render("user",{name:sess.username,data:jsonDedomena})
+	 return res.render("user",{name:sess.username,date:formalDate,eco:ecoScoreGlobal,startDate :minDate2, lastDate: maxDate2})
 	}
 	else{
 	 return res.render("Login");
 	}
+    })
+	})
+	})
 	})
 });
 
@@ -301,8 +371,47 @@ app.post("/Register",function(req,res){
 		});
 	
 	
+app.get("/user/api",function(req,res){
+	userData.find({username:sess.username})
+	.select('data -_id')
+	.exec(function(err,data){
+		
+		var loc=data[0];
+		var datas = JSON.stringify(loc);
+		var datas2 = JSON.parse(datas);
+		var mesa =datas2.data;
+		var locs= mesa.locations;
+		var arraylength=locs.length;
+		let latitudes = [];
+		let longitudes = [];
+		
+		for(var i=0; i<arraylength;i++){
+			var latitude = locs[i].latitudeE7;
+			latitudes.push(latitude/10000000);
+		}
 
+		for(var i=0; i<arraylength;i++){
+			var longitude= locs[i].longitudeE7;
+			longitudes.push(longitude/10000000);
+		}
+		let datat = [];
+		for(var i=0; i<arraylength;i++){
+			var o1 ={lat: latitudes[i],lng: longitudes[i],count : Math.floor(Math.random() * 9)};
+			datat.push(o1);
+		}
 
+		let testData = {
+			max:8,
+			data: datat
+		}
+		dedomena = testData;
+		var stringDedomena=JSON.stringify(dedomena);
+		var jsonDedomena = JSON.parse(stringDedomena);
+		res.json(jsonDedomena);
+		
+		
+})
+});
 
 app.get("/Register",function(req,res){
 	res.render("Register");
