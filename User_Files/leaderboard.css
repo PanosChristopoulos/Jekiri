@@ -1,0 +1,13 @@
+#leaderboard{
+    position: absolute;
+    color:#2196F3;
+    background-color: black;
+    left:1230px;
+    top: 350px;
+    bottom: 110px;
+    padding:40px;
+    border:2px solid black;
+    border-radius: 25px;
+    width:120px;
+    height:185px;
+  }
