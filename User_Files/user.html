@@ -49,14 +49,16 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </div>
 
 <div id="score">
+  <div  id="ecofitso">
 	<i class="fab fa-pagelines" style="color:green" ></i>
-	Μηνιαίο Score
+  Μηνιαίο Score
+  </div>
 </div>
 
 <div id="periodos">
-	<i class="far fa-calendar-check"></i>
+	<div id="periodostext"><i class="far fa-calendar-check"></i>
 	Περίοδος που καλύπτουν εγγραφές
-
+      </div>
 </div>
 
 <div id="update">
@@ -71,8 +73,16 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </div>
 
 <div id="leaderboard">
-	<i class="fas fa-crown" style="color:gold"></i>
-	Leaderboard
+  <i class="fas fa-crown" style="color:gold"></i>
+  <b> Leaderboard</b>
+  <ol style="position: absolute; left: 1px;">
+      <li style="color:gold"><i class="fas fa-medal"></i></li>
+      <li style="color:silver"><i class="fas fa-medal"></i></li>
+      <li style="color:brown"><i class="fas fa-medal"></i></li>
+      <li></li>
+      <li></li>
+
+  </ol>
 </div>
 
  <div id="filter">

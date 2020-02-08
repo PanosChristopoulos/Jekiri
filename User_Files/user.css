@@ -128,6 +128,12 @@ html {
   height:25px;
 }
 
+#ecofitso{
+  position: relative;
+  bottom: 30px;
+}
+
+
 #periodos{
   position: absolute;
   color:#2196F3;
@@ -140,6 +146,13 @@ html {
   width:120px;
   height:25px;
 }
+
+#periodostext{
+  position: relative;
+  bottom: 30px;
+}
+
+
 
 #update{
   position: absolute;
