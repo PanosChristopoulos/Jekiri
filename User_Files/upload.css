@@ -144,37 +144,61 @@ input[type="file"]{
   right: 200px;
 }
 
-label{
-  color:white;
-  height:60px;
-  width:250px;
-  background-color: #f5af09;
-  position: absolute;
-  top:520px;
-  left:660px;
-  bottom:80px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+input[type="file"]{
+    display: none;
+  }
+
+  
+ #filelabel{
+    color:white;
+    height:60px;
+    width:250px;
+    background-color: #f5af09;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 490px;
+    left: 650px;
+    position: absolute;
+  }
+  
+  #filelabel:hover{
+    background-color: black;
+    transition: background 0.5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]{
+        display:none;
+
+  }
+
+  #submitlabel {
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    left: 950px;
+    top: 490px;
 }
 
-label:hover{
-  background-color: black;
-  transition: background 0.5s ease-in-out;
-  cursor: pointer;
+#submitlabel:hover{
+    background-color: black;
+    transition: background 0.5s ease-in-out;
 }
 
 .jsondatamap{
-    height: 400px;
+height: 400px;
     width: 550px;
     position: absolute;
     top: 700px;
     left: 500px;
     bottom:100px;
     border: 1px groove black;
-    background-image:url("zarou.jpg");
-    
+    background-color: white;
 
 }
 
@@ -210,21 +234,201 @@ label:hover{
 
 }
 
+@media only screen and (max-width: 1000px){#header {
+  height: 60px;
+  margin-right: 100px;
+  border: : 2px solid #2196F3;
+  float:right;
+  padding: 10px;
+}
 
-  .maptrigger {
-    position: relative;
-    top: 150px;
-    left: 200px;
-    background-color: unset;
-    border: none;
-    color: white;
-    padding: 20px 30px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 40px;
+#datetimebox{
+  background-color: #2196F3;
+  color: white;
+  padding: 6px;
+  font-size: 50px;
+  border: none;
+  border-radius: 25px;
+  float:left;
+  margin-right: 10px;
+}
+.dropbtn {
+  background-color: #2196F3;
+  color: white;
+  padding: 6px;
+  font-size: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  float:right;
 }
 
 
-.maptrigger:hover {
-background-color: #829e89;
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+#username{
+  float: left;
+  background-color: #2196F3;
+  color: white;
+  padding: 6px;
+  font-size: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.sidebar {
+  width: 800px;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 50px;
+  background: #000000;
+  overflow-x: hidden;
+  padding: 40px;
+  border-radius: 25px;
+}
+
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 60px;
+  color: #2196F3;
+  display: block;
+  text-align: center;
+}
+
+
+.sidebar a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; 
+  font-size: 60px; 
+  padding: 0px 10px;
+}
+
+.uploadhead{
+  padding:80px;
+  width: 800px;
+  position: absolute;
+  top:550px;
+  left:50px;
+  background-image: url("upload.jpg");
+  background-size: cover;
+  text-align: right;
+  font-size:50px;
+  border-radius: 0px 0px 30px 30px;
+}
+
+
+
+.uploadhelp
+{
+  position: absolute;
+  top:670px;
+  left:270px;
+  right: 200px;
+  font-size: 50px;
+}
+
+label{
+  color:white;
+  height:220px;
+  width:500px;
+  background-color: #f5af09;
+  position: absolute;
+  top:2120px;
+  left:270px;
+  bottom:80px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label:hover{
+  background-color: black;
+  transition: background 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.jsondatamap{
+height: 800px;
+    width: 800px;
+    position: absolute;
+    top: 2800px;
+    left: 100px;
+    bottom:100px;
+    border: 1px groove black;
+    background-color: white;
+
+}
+
+.jsondatamaphelp{
+    position: absolute;
+    top: 2350px;
+    left: 100px;
+font-size: 50px;
+
+}
+
+.SubmitButton{
+  position: absolute;
+  top: 3750px;
+    left: 200px;
+    border-radius: 10px;
+     background-color: #0e330e;
+  border: none;
+  color: white;
+  padding: 64px 128px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 20px 0;
+  font-size: 50px;
+}
+
+.SubmitButton:hover {
+  background-color: #31db25;
+  transition-duration: 0.6s;
+          -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+
+}
+
+
 }

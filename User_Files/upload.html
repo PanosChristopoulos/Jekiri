@@ -4,6 +4,12 @@
 	<title>Upload</title>
 	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="upload.css">
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
 </head>
 <body>
 
@@ -43,8 +49,14 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 <div class="uploadhead"> 
 </div>
 
-<input type="file" id="file">
-<label for="file">Επιλέξτε ένα αρχείο .json <i class="fas fa-file-import"></i>  </label>
+<form action="/action_page.php" id="fitsos">
+        <input type="file" name="pic" id="file" >
+        <label for="file" id="filelabel">Επιλέξτε ένα αρχείο .json <i class="fas fa-file-import"></i>  </label>
+        <input type="submit" id="submit">
+        <label for="submit" id="submitlabel"><i class="far fa-check-circle"></i></label>
+      </form>
+
+
 
 <div class="uploadhelp">
   <h3>Βοήθεια</h3>
@@ -63,7 +75,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 </h3>
 <div class="jsondatamap">
-  <button class="maptrigger" ><i class="fas fa-map-marked-alt"></i><br>Είσοδος στο Χάρτη</button>
+  
 
 </div>
 
