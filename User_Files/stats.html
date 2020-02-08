@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Στατιστικά</title>
+    
+     <title>Στατιστικά</title>
 	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 	<link rel="stylesheet" type="text/css" href="stats.css">
+    <link rel="stylesheet" href="stats.css">
 </head>
 <body>
-
-
 <div id="header">
 <div id="datetimebox"><i class="fas fa-calendar-day"></i>
 <span id="datetime"></span>
@@ -147,5 +147,11 @@ var myChart = new Chart(ctx, {
 });
 </script></div>
 
+    <input type="date" name="startdate" id="startdate">
+    <input type="date" name="enddate" id="enddate">
+<h4>Εύρος ημερομηνιών</h4>
+<button type="submit" class="SubmitButton">
+  Αποδοχή <i class="far fa-check-circle"></i>
+</button>
 </body>
 </html>
