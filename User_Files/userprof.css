@@ -6,7 +6,12 @@ html {
   margin: auto;
   width: 960px;
 }
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 91px;
 
+}
 
 #header {
   height: 60px;
@@ -83,15 +88,17 @@ html {
 }
 
 .sidebar {
+  
   width: 210px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 100px;
+  top: 350px;
   left: 30px;
   background: #000000;
   overflow-x: hidden;
   padding: 40px;
   border-radius: 25px;
+
 }
 
 
