@@ -1,19 +1,69 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
     
-     <title>Στατιστικά</title>
-	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
-	<link rel="stylesheet" type="text/css" href="stats.css">
-    <link rel="stylesheet" href="stats.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <title>Στατιστικά</title>
+   <script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all"><link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+   <link rel="stylesheet" type="text/css" href="stats.css">
+   <link rel="stylesheet" href="stats.css">
+   <link rel="shortcut icon" type="image/png" href="favicon.png">
+<style type="text/css">/* Chart.js */
+/*
+* DOM element rendering detection
+* https://davidwalsh.name/detect-node-insertion
+*/
+@keyframes chartjs-render-animation {
+   from { opacity: 0.99; }
+   to { opacity: 1; }
+}
 
-</head>
+.chartjs-render-monitor {
+   animation: chartjs-render-animation 0.001s;
+}
+
+/*
+* DOM element resizing detection
+* https://github.com/marcj/css-element-queries
+*/
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+   position: absolute;
+   direction: ltr;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   overflow: hidden;
+   pointer-events: none;
+   visibility: hidden;
+   z-index: -1;
+}
+
+.chartjs-size-monitor-expand > div {
+   position: absolute;
+   width: 1000000px;
+   height: 1000000px;
+   left: 0;
+   top: 0;
+}
+
+.chartjs-size-monitor-shrink > div {
+   position: absolute;
+   width: 200%;
+   height: 200%;
+   left: 0;
+   top: 0;
+}
+</style></head>
 <body>
+
+   <img src="JekiriLogo.png" id="logo">
+
+
+
 <div id="header">
-<div id="datetimebox"><i class="fas fa-calendar-day"></i>
-<span id="datetime"></span>
+<div id="datetimebox"><i class="fas fa-calendar-day" aria-hidden="true"></i>
+<span id="datetime">9/2/2020</span>
 
 <script>
 var dt = new Date();
@@ -23,142 +73,414 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 </div>
 <div id="username" onclick="location.href = 'userprof.html';">
-  <i class="fas fa-user-circle"></i>
-  Username
+ <i class="fas fa-user-circle" aria-hidden="true"></i>
+ Username
 </div>
 <div class="dropdown">
-  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
-  <div class="dropdown-content">
-  <a href="help.html">Βοήθεια</a>
-  <a href="info.html">Πληροφορίες</a>
-  <a href="credits.html">Credits</a>
-  </div>
+ <button class="dropbtn"><i class="far fa-question-circle" aria-hidden="true"></i></button>
+ <div class="dropdown-content">
+ <a href="help.html">Βοήθεια</a>
+ <a href="info.html">Πληροφορίες</a>
+ <a href="credits.html">Credits</a>
+ </div>
 
 </div>
 </div>
 
 <div class="sidebar">
-  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
-  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
-  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
-  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+ <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;" aria-hidden="true"></i> Αρχική</a>
+ <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;" aria-hidden="true"></i> Στατιστικά</a>
+ <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;" aria-hidden="true"></i> Upload</a>
+ <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;" aria-hidden="true"></i> Επικοινωνία</a>
 </div>
 
 <div class="statshead">
-	
+   
 
 </div>
 
 
-<div class="agraph"><canvas id="ChartA" style="width:100%;height:100%;"></canvas>
+<div class="agraph"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="ChartA" style="width: 1400px; height: 656px; display: block;" width="1400" height="656" class="chartjs-render-monitor"></canvas>
 <script>
 var ctx = document.getElementById('ChartA').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Αυτοκίνητο', 'Ποδήλατο', 'Περπάτημα', 'Τρέξιμο', 'Ακινησία'],
-        datasets: [{
-            label: 'Ποσοστό ανά Τύπο Δραστηριότητας',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
+   type: 'bar',
+   data: {
+       labels: ['Αυτοκίνητο', 'Ποδήλατο', 'Περπάτημα', 'Τρέξιμο', 'Ακινησία'],
+       datasets: [{
+           label: 'Ποσοστό ανά Τύπο Δραστηριότητας',
+           data: [12, 19, 3, 5, 2, 3],
+           backgroundColor: [
+               'rgba(255, 99, 132, 0.2)',
+               'rgba(54, 162, 235, 0.2)',
+               'rgba(255, 206, 86, 0.2)',
+               'rgba(75, 192, 192, 0.2)',
+               'rgba(153, 102, 255, 0.2)'
+           ],
+           borderColor: [
+               'rgba(255, 99, 132, 1)',
+               'rgba(54, 162, 235, 1)',
+               'rgba(255, 206, 86, 1)',
+               'rgba(75, 192, 192, 1)',
+               'rgba(153, 102, 255, 1)'
+           ],
+           borderWidth: 1
+       }]
+   },
+   options: {
+       scales: {
+           yAxes: [{
+               ticks: {
+                   beginAtZero: true
+               }
+           }]
+       }
+   }
 });
 </script></div>
 
-<div class="bgraph"><canvas id="ChartB" style="width:100%;height:100%;"></canvas>
-<script>
-var ctx = document.getElementById('ChartB').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
-        datasets: [{
-            label: 'Ποσοστό καταχωρήσεων ανά ημέρα',
-            data: [12, 19, 3, 5, 2, 3, 5],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(51, 233, 133, 0.5)',
-                'rgba(2, 27, 14, 0.5)'
-            ],
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-</script></div>
 
-<div class="cgraph"><canvas id="ChartC" style="width:100%;height:100%;"></canvas>
-<script>
-var ctx = document.getElementById('ChartC').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['1 π.μ.', '2 π.μ.', '3 π.μ.', '4 π.μ.', '5 π.μ.', '6 π.μ.', '7 π.μ.', '8 π.μ.', '9 π.μ.', '10 π.μ.', '11 π.μ.', '12 π.μ.', '1 μ.μ.', '2 μ.μ.', '3 μ.μ.', '4 μ.μ.', '5 μ.μ.', '6 μ.μ.', '7 μ.μ.', '8 μ.μ.', '9 μ.μ.', '10 μ.μ.', '11 μ.μ.', '12 μ.μ.',],
-        datasets: [{
-            label: 'Ποσοστό εγγραφών ανά ώρα',
-            data: [12, 19, 3, 5, 2, 3, 5, 16, 2, 6, 10, 19, 14, 13, 17, 12, 10, 14, 9, 8, 13, 19, 23, 24],
-            backgroundColor: [
-                
-            ],
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-});
-</script></div>
 
-    <div id="filter">
-            <p id="parag1">Εύρος ημερομηνιών</p><br>
-            <label for="startdate">Από</label>
-            <input type="date" name="startdate">
-            <label for="enddate">Έως</label>
-            <input type="date" name="enddate"><br><br>
-            <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+   <div id="filter">
+           <p id="parag1">Εύρος ημερομηνιών</p><br>
+           <label for="startdate">Από</label>
+           <input type="date" name="startdate">
+           <label for="enddate">Έως</label>
+           <input type="date" name="enddate"><br><br>
+           <button type="submit" id="submitbutton"><i class="fas fa-check-double" aria-hidden="true"></i> <br> ΑΠΟΔΟΧΗ</button>
 
 
 
-    </div>
-</body>
-</html>
+   </div>
+
+
+
+
+
+<div id="carheader"> <i class="fas fa-car" aria-hidden="true"></i> Γραφήματα χρήσης οχημάτων</div>
+
+<div id="cargraphA"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="cargraphAd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('cargraphAd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+           datasets: [{
+               label: 'Ποσοστό καταχωρήσεων ανά ημέρα',
+               data: [12, 19, 3, 5, 2, 3, 5],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.5)',
+                   'rgba(54, 162, 235, 0.5)',
+                   'rgba(255, 206, 86, 0.5)',
+                   'rgba(75, 192, 192, 0.5)',
+                   'rgba(153, 102, 255, 0.5)',
+                   'rgba(51, 233, 133, 0.5)',
+                   'rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+<div id="cargraphB"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="cargraphBd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('cargraphBd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: ['1 π.μ.', '2 π.μ.', '3 π.μ.', '4 π.μ.', '5 π.μ.', '6 π.μ.', '7 π.μ.', '8 π.μ.', '9 π.μ.', '10 π.μ.', '11 π.μ.', '12 π.μ.', '1 μ.μ.', '2 μ.μ.', '3 μ.μ.', '4 μ.μ.', '5 μ.μ.', '6 μ.μ.', '7 μ.μ.', '8 μ.μ.', '9 μ.μ.', '10 μ.μ.', '11 μ.μ.', '12 μ.μ.'],
+           datasets: [{
+               label: 'Ποσοστό εγγραφών ανά ώρα',
+               data: [12, 19, 3, 5, 2, 3, 5, 16, 2, 6, 10, 19, 14, 13, 17, 12, 10, 14, 9, 8, 13, 19, 23, 24],
+               backgroundColor: [ 
+               'rgba(2, 27, 14, 0.5)' , 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+
+
+<div id="bicycleheader"> <i class="fas fa-bicycle" aria-hidden="true"></i> Γραφήματα χρήσης ποδηλάτου</div>
+
+<div id="bicylcegraphA"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="bicyclegraphAd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('bicyclegraphAd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+           datasets: [{
+               label: 'Ποσοστό καταχωρήσεων ανά ημέρα',
+               data: [12, 19, 3, 5, 2, 3, 5],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.5)',
+                   'rgba(54, 162, 235, 0.5)',
+                   'rgba(255, 206, 86, 0.5)',
+                   'rgba(75, 192, 192, 0.5)',
+                   'rgba(153, 102, 255, 0.5)',
+                   'rgba(51, 233, 133, 0.5)',
+                   'rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+<div id="bicyclegraphB"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="bicyclegraphBd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('bicyclegraphBd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: ['1 π.μ.', '2 π.μ.', '3 π.μ.', '4 π.μ.', '5 π.μ.', '6 π.μ.', '7 π.μ.', '8 π.μ.', '9 π.μ.', '10 π.μ.', '11 π.μ.', '12 π.μ.', '1 μ.μ.', '2 μ.μ.', '3 μ.μ.', '4 μ.μ.', '5 μ.μ.', '6 μ.μ.', '7 μ.μ.', '8 μ.μ.', '9 μ.μ.', '10 μ.μ.', '11 μ.μ.', '12 μ.μ.'],
+           datasets: [{
+               label: 'Ποσοστό εγγραφών ανά ώρα',
+               data: [12, 19, 3, 5, 2, 3, 5, 16, 2, 6, 10, 19, 14, 13, 17, 12, 10, 14, 9, 8, 13, 19, 23, 24],
+               backgroundColor: [ 
+               'rgba(2, 27, 14, 0.5)' , 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+<div id="footheader"> <i class="fas fa-walking" aria-hidden="true"></i> Γραφήματα βαδίσματος</div>
+
+<div id="footgraphA"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="footgraphAd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('footgraphAd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+           datasets: [{
+               label: 'Ποσοστό καταχωρήσεων ανά ημέρα',
+               data: [12, 19, 3, 5, 2, 3, 5],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.5)',
+                   'rgba(54, 162, 235, 0.5)',
+                   'rgba(255, 206, 86, 0.5)',
+                   'rgba(75, 192, 192, 0.5)',
+                   'rgba(153, 102, 255, 0.5)',
+                   'rgba(51, 233, 133, 0.5)',
+                   'rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+<div id="footgraphB"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="footgraphBd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('footgraphBd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: ['1 π.μ.', '2 π.μ.', '3 π.μ.', '4 π.μ.', '5 π.μ.', '6 π.μ.', '7 π.μ.', '8 π.μ.', '9 π.μ.', '10 π.μ.', '11 π.μ.', '12 π.μ.', '1 μ.μ.', '2 μ.μ.', '3 μ.μ.', '4 μ.μ.', '5 μ.μ.', '6 μ.μ.', '7 μ.μ.', '8 μ.μ.', '9 μ.μ.', '10 μ.μ.', '11 μ.μ.', '12 μ.μ.'],
+           datasets: [{
+               label: 'Ποσοστό εγγραφών ανά ώρα',
+               data: [12, 19, 3, 5, 2, 3, 5, 16, 2, 6, 10, 19, 14, 13, 17, 12, 10, 14, 9, 8, 13, 19, 23, 24],
+               backgroundColor: [ 
+               'rgba(2, 27, 14, 0.5)' , 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+
+<div id="runningheader"><i class="fas fa-running" aria-hidden="true"></i>Γραφήματα γρήγορης κίνησης</div>
+
+<div id="runninggraphA"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="runninggraphAd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('runninggraphAd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+           datasets: [{
+               label: 'Ποσοστό καταχωρήσεων ανά ημέρα',
+               data: [12, 19, 3, 5, 2, 3, 5],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.5)',
+                   'rgba(54, 162, 235, 0.5)',
+                   'rgba(255, 206, 86, 0.5)',
+                   'rgba(75, 192, 192, 0.5)',
+                   'rgba(153, 102, 255, 0.5)',
+                   'rgba(51, 233, 133, 0.5)',
+                   'rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+<div id="runninggraphB"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="runninggraphBd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('runninggraphBd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: ['1 π.μ.', '2 π.μ.', '3 π.μ.', '4 π.μ.', '5 π.μ.', '6 π.μ.', '7 π.μ.', '8 π.μ.', '9 π.μ.', '10 π.μ.', '11 π.μ.', '12 π.μ.', '1 μ.μ.', '2 μ.μ.', '3 μ.μ.', '4 μ.μ.', '5 μ.μ.', '6 μ.μ.', '7 μ.μ.', '8 μ.μ.', '9 μ.μ.', '10 μ.μ.', '11 μ.μ.', '12 μ.μ.'],
+           datasets: [{
+               label: 'Ποσοστό εγγραφών ανά ώρα',
+               data: [12, 19, 3, 5, 2, 3, 5, 16, 2, 6, 10, 19, 14, 13, 17, 12, 10, 14, 9, 8, 13, 19, 23, 24],
+               backgroundColor: [ 
+               'rgba(2, 27, 14, 0.5)' , 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+
+<div id="stillheader"><i class="fas fa-hourglass-half" aria-hidden="true"></i>    Γραφήματα ακινησίας</div>
+
+<div id="stillgraphA"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="stillgraphAd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('stillgraphAd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: ['Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο', 'Κυριακή'],
+           datasets: [{
+               label: 'Ποσοστό καταχωρήσεων ανά ημέρα',
+               data: [12, 19, 3, 5, 2, 3, 5],
+               backgroundColor: [
+                   'rgba(255, 99, 132, 0.5)',
+                   'rgba(54, 162, 235, 0.5)',
+                   'rgba(255, 206, 86, 0.5)',
+                   'rgba(75, 192, 192, 0.5)',
+                   'rgba(153, 102, 255, 0.5)',
+                   'rgba(51, 233, 133, 0.5)',
+                   'rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+<div id="stillgraphB"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div><canvas id="stillgraphBd" style="width: 100%; height: 100%; display: block;" width="300" height="180" class="chartjs-render-monitor"></canvas>
+   <script>
+   var ctx = document.getElementById('stillgraphBd').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'bar',
+       data: {
+           labels: ['1 π.μ.', '2 π.μ.', '3 π.μ.', '4 π.μ.', '5 π.μ.', '6 π.μ.', '7 π.μ.', '8 π.μ.', '9 π.μ.', '10 π.μ.', '11 π.μ.', '12 π.μ.', '1 μ.μ.', '2 μ.μ.', '3 μ.μ.', '4 μ.μ.', '5 μ.μ.', '6 μ.μ.', '7 μ.μ.', '8 μ.μ.', '9 μ.μ.', '10 μ.μ.', '11 μ.μ.', '12 μ.μ.'],
+           datasets: [{
+               label: 'Ποσοστό εγγραφών ανά ώρα',
+               data: [12, 19, 3, 5, 2, 3, 5, 16, 2, 6, 10, 19, 14, 13, 17, 12, 10, 14, 9, 8, 13, 19, 23, 24],
+               backgroundColor: [ 
+               'rgba(2, 27, 14, 0.5)' , 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)', 'rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)',
+               'rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)','rgba(2, 27, 14, 0.5)'
+               ],
+           }]
+       },
+       options: {
+           scales: {
+               yAxes: [{
+                   ticks: {
+                       beginAtZero: true
+                   }
+               }]
+           }
+       }
+   });
+   </script></div>
+
+
+
+</body></html>
