@@ -461,13 +461,13 @@ input[type="file"]{
   
     .maptrigger {
       position: relative;
-      top: 150px;
-      left: 200px;
+      top: 350px;
+      left: 300px;
       background-color: unset;
       border: none;
       color: white;
-      padding: 20px 30px;
-      font-size: 14px;
+      padding: 40px 60px;
+      font-size: 28px;
       cursor: pointer;
       border-radius: 40px;
   }
