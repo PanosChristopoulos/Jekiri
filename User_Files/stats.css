@@ -7,6 +7,14 @@ html {
   width: 960px;
 }
 
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 91px;
+
+}
+
+
 
 #header {
   height: 60px;
@@ -85,12 +93,13 @@ html {
   width: 210px;
   position: absolute;
   z-index: 1;
-  top: 100px;
+  top: 350px;
   left: 30px;
   background: #000000;
   overflow-x: hidden;
   padding: 40px;
   border-radius: 25px;
+
 }
 
 
@@ -140,11 +149,11 @@ html {
 
 .agraph{
   position: absolute;
-  height: 180px;
-  width: 300px;
-  top:320px;
-  left:470px;
-  border:1px groove black;
+  height: 300px;
+  width: 640px;
+  top: 320px;
+  left: 470px;
+  border: 1px groove black;
   background-color: white;
 }
 
@@ -169,16 +178,16 @@ html {
   margin: 20px 0;
 }
 #filter{
-    position: absolute;
-    color: white;
-    width: 200px;
-    z-index: 1;
-    top: 370px;
-    left: 30px;
-    background: #000000;
-    overflow-x: hidden;
-    padding: 40px;
-    border-radius: 25px;
+  position: absolute;
+  color: white;
+  width: 200px;
+  z-index: 1;
+  top: 670px;
+  left: 30px;
+  background: #000000;
+  overflow-x: hidden;
+  padding: 40px;
+  border-radius: 25px;
 }
 
 #parag1{
@@ -199,9 +208,193 @@ button[type=submit]:hover {
     transition: background 0.5s ease-in-out;
   }
 
+#carheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 650px;
+  top: 660px;
+  left: 470px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+
+}
+
+#cargraphA{
+    position: absolute;
+    height: 180px;
+    width: 300px;
+    top: 780px;
+    left: 470px;
+    border: 1px groove black;
+    background-color: white;
+
+}
+
+#cargraphB{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 780px;
+  left: 820px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+#bicycleheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 650px;
+  top: 1020px;
+  left: 470px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+}
 
 
+#bicylcegraphA{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 1140px;
+  left: 470px;
+  border: 1px groove black;
+  background-color: white;
 
+}
+
+#bicyclegraphB{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 1140px;
+  left: 820px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+
+#footheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 650px;
+  top: 1380px;
+  left: 470px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+
+}
+
+#footgraphA{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 1500px;
+  left: 470px;
+  border: 1px groove black;
+  background-color: white;
+
+
+}
+
+#footgraphB{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 1500px;
+  left: 820px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+#runningheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 650px;
+  top: 1740px;
+  left: 470px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+
+}
+
+#runninggraphA{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 1860px;
+  left: 470px;
+  border: 1px groove black;
+  background-color: white;
+
+
+}
+
+
+#runninggraphB{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 1860px;
+  left: 820px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+#stillheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 650px;
+  top: 2100px;
+  left: 470px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+
+
+}
+
+#stillgraphA{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 2220px;
+  left: 470px;
+  border: 1px groove black;
+  background-color: white;
+  margin-bottom: 40px;
+
+
+}
+
+#stillgraphB{
+  position: absolute;
+  height: 180px;
+  width: 300px;
+  top: 2220px;
+  left: 820px;
+  border: 1px groove black;
+  background-color: white; 
+  margin-bottom: 40px;
+}
 
 
 
