@@ -147,11 +147,16 @@ var myChart = new Chart(ctx, {
 });
 </script></div>
 
-    <input type="date" name="startdate" id="startdate">
-    <input type="date" name="enddate" id="enddate">
-<h4>Εύρος ημερομηνιών</h4>
-<button type="submit" class="SubmitButton">
-  Αποδοχή <i class="far fa-check-circle"></i>
-</button>
+    <div id="filter">
+            <p id="parag1">Εύρος ημερομηνιών</p><br>
+            <label for="startdate">Από</label>
+            <input type="date" name="startdate">
+            <label for="enddate">Έως</label>
+            <input type="date" name="enddate"><br><br>
+            <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+
+
+
+    </div>
 </body>
 </html>
