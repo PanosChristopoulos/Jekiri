@@ -7,6 +7,13 @@ html {
   width: 960px;
 }
 
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 91px;
+
+}
+
 
 #header {
   height: 60px;
@@ -83,15 +90,17 @@ html {
 }
 
 .sidebar {
-  width: 210px;
-  position: absolute;
-  z-index: 1;
-  top: 100px;
-  left: 30px;
-  background: #000000;
-  overflow-x: hidden;
-  padding: 40px;
-  border-radius: 25px;
+  
+    width: 210px;
+    position: absolute;
+    z-index: 1;
+    top: 350px;
+    left: 30px;
+    background: #000000;
+    overflow-x: hidden;
+    padding: 40px;
+    border-radius: 25px;
+
 }
 
 
@@ -117,15 +126,15 @@ html {
 
 #score{
   position: absolute;
-  color:#2196F3;
+  color: #2196F3;
   background-color: black;
-  left:380px;
+  left: 480px;
   top: 110px;
-  padding:40px;
-  border:2px solid black;
+  padding: 40px;
+  border: 2px solid black;
   border-radius: 25px;
-  width:120px;
-  height:25px;
+  width: 120px;
+  height: 25px;
 }
 
 #ecofitso{
@@ -136,15 +145,15 @@ html {
 
 #periodos{
   position: absolute;
-  color:#2196F3;
+  color: #2196F3;
   background-color: black;
-  left:680px;
+  left: 780px;
   top: 110px;
-  padding:40px;
-  border:2px solid black;
+  padding: 40px;
+  border: 2px solid black;
   border-radius: 25px;
-  width:120px;
-  height:25px;
+  width: 120px;
+  height: 25px;
 }
 
 #periodostext{
@@ -156,15 +165,15 @@ html {
 
 #update{
   position: absolute;
-  color:#2196F3;
+  color: #2196F3;
   background-color: black;
-  left:980px;
+  left: 1080px;
   top: 110px;
-  padding:40px;
-  border:2px solid black;
+  padding: 40px;
+  border: 2px solid black;
   border-radius: 25px;
-  width:120px;
-  height:25px;
+  width: 120px;
+  height: 25px;
   text-align: center;
 }
 
@@ -220,11 +229,11 @@ html {
 }
 
 #filter{
-    position: absolute;
+position: absolute;
     color: white;
     width: 200px;
     z-index: 1;
-    top: 370px;
+    top: 670px;
     left: 30px;
     background: #000000;
     overflow-x: hidden;
