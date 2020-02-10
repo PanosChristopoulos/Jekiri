@@ -157,26 +157,7 @@ html {
   background-color: white;
 }
 
-.bgraph{
-  position: absolute;
-  height: 180px;
-  width: 300px;
-  top:320px;
-  left:850px;
-  border:1px groove black;
-  background-color: white;
-}
 
-.cgraph{
-  position: absolute;
-  height: 180px;
-  width: 600px;
-  top:550px;
-  left:470px;
-  border:1px groove black;
-  background-color: white;
-  margin: 20px 0;
-}
 #filter{
   position: absolute;
   color: white;
@@ -399,12 +380,21 @@ button[type=submit]:hover {
 
 
 @media only screen and (max-width: 1000px){
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 91px;
+height: 100px;
+width: 350px;
+}
+
 #header {
   height: 60px;
   margin-right: 100px;
   border: : 2px solid #2196F3;
   float:right;
   padding: 10px;
+ padding-left: 100px;
 }
 
 #datetimebox{
@@ -473,11 +463,11 @@ button[type=submit]:hover {
 }
 
 .sidebar {
-  width: 800px;
+  width: 700px;
   position: absolute;
   z-index: 1;
   top: 100px;
-  left: 50px;
+  left: 400px;
   background: #000000;
   overflow-x: hidden;
   padding: 40px;
@@ -510,8 +500,8 @@ button[type=submit]:hover {
   padding:160px;
   width: 1000px;
   position: absolute;
-  top:700px;
-  left:150px;
+  top:1100px;
+  left:40px;
   background-image: url("stats.jpg");
   background-size: cover;
   text-align: right;
@@ -530,101 +520,239 @@ button[type=submit]:hover {
 .agraph{
   position: absolute;
   height: 720px;
-  width: 1400px;
-  top:1120px;
-  left:170px;
+  width: 1300px;
+  top:1520px;
+  left:40px;
   border:1px groove black;
   background-color: white;
+  size: 100px;
+}
+#filter{
+    position: absolute;
+    color: white;
+    width: 500px;
+    
+    top: 520px;
+    left: 400px;
+    background: #000000;
   
+    padding: 100px;
+    border-radius: 20px;
+    font-size: 50px;
+    height: 350px;
 }
 
-.bgraph{
-  position: absolute;
-  height: 720px;
-  width: 1200px;
-  top:2040px;
-  left:170px;
-  border:1px groove black;
-  background-color: white;
-   
+#parag1{
+    color:#2196F3;
 }
 
-.cgraph{
-  position: absolute;
-  height: 720px;
-  width: 1200px;
-  top:2900px;
-  left:170px;
-  border:1px groove black;
-  background-color: white;
-  margin: 20px 0;
-   
+button[type=submit]{
+    border-radius: 0px;    
+    padding:10px;
+    background-color: #2196F3;
+    position: relative;
+    left: 150px;
+    font-size: 40px;
 }
-[type="date"] {
-    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
-  }
-  [type="date"]::-webkit-inner-spin-button {
-    display: none;
-  }
-  [type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
-  }
-  
 
-#startdate {
-    position: absolute;
-    margin-top: 3800px;
-    margin-left: 300px;
-    margin-bottom: 80px;
-    border: 1px solid #c4c4c4;
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
-    width: 400px;
+button[type=submit]:hover {
+    background-color: greenyellow;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+    font-size: 40px;
+  }
+  button[type =date]{
+    padding: 200px;
     font-size: 50px;
   }
 
-#enddate {
-    position: absolute;
-    margin-top: 3800px;
-    margin-left: 850px;
-    margin-bottom: 80px;
-    border: 1px solid #c4c4c4;
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
-    width: 400px;
-    font-size: 50px;
-  }
-  h4{
-    position: absolute;
-    margin-top: 3700px;
-    margin-left: 500px;
-    font-size: 50px;
-  }
-.SubmitButton{
+#carheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
   position: absolute;
-  top: 3900px;
-    left: 600px;
-    border-radius: 10px;
-     background-color: #0e330e;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  margin: 20px 0;
+  width: 850px;
+  top: 2360px;
+  left: 250px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+font-size: 50px;
+
+}
+
+#cargraphA{
+    position: absolute;
+    height: 360px;
+    width: 600px;
+    top: 2480px;
+    left: 50px;
+    border: 1px groove black;
+    background-color: white;
+
+}
+
+#cargraphB{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 2480px;
+  left: 720px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+#bicycleheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 850px;
+  top: 2920px;
+  left: 250px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
   font-size: 50px;
 }
 
-.SubmitButton:hover {
-  background-color: #31db25;
-  transition-duration: 0.6s;
-          -webkit-transform: scale(1.3);
-        -ms-transform: scale(1.3);
-        transform: scale(1.3);
 
+#bicylcegraphA{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 3040px;
+  left: 50px;
+  border: 1px groove black;
+  background-color: white;
+
+}
+
+#bicyclegraphB{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 3040px;
+  left: 720px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+
+#footheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 850px;
+  top: 3480px;
+  left: 250px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+font-size: 50px;
+}
+
+#footgraphA{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 3600px;
+  left: 50px;
+  border: 1px groove black;
+  background-color: white;
+
+
+}
+
+#footgraphB{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 3600px;
+  left: 720px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+#runningheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 850px;
+  top: 4040px;
+  left: 250px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+font-size: 50px;
+}
+
+#runninggraphA{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 4160px;
+  left: 50px;
+  border: 1px groove black;
+  background-color: white;
+
+
+}
+
+
+#runninggraphB{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 4160px;
+  left: 720px;
+  border: 1px groove black;
+  background-color: white; 
+}
+
+#stillheader{
+  color: #2196F3;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 63px;
+  position: absolute;
+  width: 850px;
+  top: 4600px;
+  left: 250px;
+  height: 60px;
+  background-color: black;
+  border-radius: 25px;
+  font-size: 50px;
+
+
+}
+
+#stillgraphA{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 4720px;
+  left: 50px;
+  border: 1px groove black;
+  background-color: white;
+  margin-bottom: 40px;
+
+
+}
+
+#stillgraphB{
+  position: absolute;
+  height: 360px;
+  width: 600px;
+  top: 4720px;
+  left: 720px;
+  border: 1px groove black;
+  background-color: white; 
+  margin-bottom: 40px;
 }
