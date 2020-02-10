@@ -267,7 +267,13 @@ input[type="file"]{
 }
 
 @media only screen and (max-width: 1000px){
-
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 71px;
+    width: 250px;
+    height: 90px;
+}
 
 #header {
   height: 60px;
@@ -346,7 +352,7 @@ input[type="file"]{
 
 .sidebar {
   width: 420px;
-  height: 320px;
+  height: 300px;
   position: absolute;
   z-index: 1;
   top: 100px;
