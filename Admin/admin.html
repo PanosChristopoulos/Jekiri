@@ -18,7 +18,27 @@
     Εξαγωγή</a>
     <a href="delete.html" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i>    Διαγραφή</a>
 
-    
+    <div id="filter">
+        <label for="startdate">Από</label>
+        <input type="month" name="startdate">
+        <label for="enddate">Έως</label>
+        <input type="month" name="enddate" ><br><br>
+        <label for="acttype">Τύπος Δραστηριότητας</label>
+        <input list="activity">
+        <datalist id="activity">
+            <option value="Αυτοκίνητο">
+            <option value="Ποδήλατο">
+            <option value="Περπάτημα">
+            <option value="Τρέξιμο">
+            <option value="Ακινησία">
+          </datalist>
+        <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+
+
+
+</div>
+
+
 <div id="map">Χάρτης</div>
 </body>
 </html>
