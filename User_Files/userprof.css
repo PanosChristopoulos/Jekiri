@@ -247,7 +247,7 @@ position: absolute;
   width: 700px;
   position: absolute;
   z-index: 1;
-  top: 250px;
+  top: 400px;
   left: 100px;
   background: #000000;
   overflow-x: hidden;
@@ -285,20 +285,20 @@ position: absolute;
     height: 150px;
     border-radius: 50%;
     position: absolute;
-    top: 680px;
+    top: 880px;
     left: 120px;
 }
 
 .onoma{
 position: absolute;
-    top: 680px;
+    top: 880px;
     left: 320px;
     font-size: 40px;}
 
 
 .userdata{
 position: absolute;
-    top: 750px;
+    top: 950px;
     left: 330px;
     font-size: 40px;
 }
@@ -310,7 +310,7 @@ position: absolute;
     border-radius: 15px;
     font:times;
     position: absolute;
-    top: 680px;
+    top: 880px;
     left:570px;
     font-size: 40px;
 }
