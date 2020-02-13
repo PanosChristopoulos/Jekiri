@@ -267,10 +267,10 @@ button[type=submit]:hover {
 
 #logo{
   position: absolute;
-    left: 1000px;
-    top: 91px;
-width: 350px;
-height: 100px;
+    left: 00px;
+    top: 100px;
+width: 400px;
+height: 120px;
 }
 
 
@@ -322,9 +322,10 @@ height: 100px;
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  padding: 24px 36px;
   text-decoration: none;
   display: block;
+  font-size: 40px;
 }
 
 .dropdown-content a:hover {background-color: #f1f1f1}
@@ -353,7 +354,7 @@ height: 100px;
   width: 800px;
   position: absolute;
   z-index: 1;
-  top: 100px;
+  top: 300px;
   left: 50px;
   background: #000000;
   overflow-x: hidden;
@@ -387,8 +388,8 @@ height: 100px;
   position: absolute;
   color:#2196F3;
   background-color: black;
-  left:0px;
-  top: 2500px;
+  left:150px;
+  top: 2700px;
   padding:40px;
   border:2px solid black;
   border-radius: 25px;
@@ -401,8 +402,8 @@ height: 100px;
   position: absolute;
   color:#2196F3;
   background-color: black;
-  left:400px;
-  top: 2500px;
+  left:550px;
+  top: 2700px;
   padding:40px;
   border:2px solid black;
   border-radius: 25px;
@@ -415,8 +416,8 @@ height: 100px;
   position: absolute;
   color:#2196F3;
   background-color: black;
-  left:800px;
-  top: 2500px;
+  left:950px;
+  top: 2700px;
   padding:40px;
   border:2px solid black;
   border-radius: 25px;
@@ -439,8 +440,8 @@ height: 100px;
 {
   position: absolute;
   background-color: white;
-  left:150px;
-  top: 1150px;
+  left:120px;
+  top: 1350px;
   border:2px groove black;
   padding:500px;
   margin-bottom:200px;
@@ -468,7 +469,7 @@ height: 100px;
   color:#2196F3;
   background-color: black;
   left:1100px;
-  top: 300px;
+  top: 500px;
   bottom: 110px;
   padding:40px;
   border:2px solid black;
@@ -483,7 +484,7 @@ font-size: 50px;
     color: white;
     width: 500px;
     
-    top: 550px;
+    top: 750px;
     left: 150px;
     background: #000000;
   
@@ -512,8 +513,9 @@ button[type=submit]:hover {
     transition: background 0.5s ease-in-out;
     font-size: 40px;
   }
-  button[type =date]{
-    padding: 200px;
-    font-size: 50px;
+  input[type =date]{
+    padding: 20px;
+    font-size: 40px;
   }
+
 }
