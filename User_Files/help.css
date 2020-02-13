@@ -230,7 +230,7 @@ height: 100px;
   position: absolute;
   z-index: 1;
   top: 300px;
-  left: 150px;
+  left: 50px;
   background: #000000;
   overflow-x: hidden;
   padding: 40px;
@@ -266,7 +266,7 @@ height: 100px;
 .helptext{
   position: absolute;
   top:650px;
-  left:150px;
+  left:70px;
   font-size: 40px;
 }
 }
