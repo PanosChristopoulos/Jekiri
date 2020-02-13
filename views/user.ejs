@@ -3,14 +3,25 @@
 <head>
 	<title>Αρχική</title>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
-	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
-	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
-	<script src="Map.js"></script>
-	<link rel="stylesheet" type="text/css" href="user.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+  <script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+  <script src="Map.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+  <link rel="stylesheet" type="text/css" href="user.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    
+
 </head>
 <body>
+
+  <img src="JekiriLogo.png" id="logo" >
 
 
 <div id="header">
@@ -47,19 +58,25 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </div>
 
 <div id="score">
-	<i class="fab fa-pagelines" style="color:green" ></i>
-	Μηνιαίο Score
+  <div  id="ecofitso">
+	<i class="fab fa-pagelines" style="color:green" ></i> <br>
+  <b>Μηνιαίο <br> eco-Score <br> </b>
+  <div style="font-size: 25px"><%= eco %> % </div>
+  </div>
 </div>
 
 <div id="periodos">
-	<i class="far fa-calendar-check"></i>
-	Περίοδος που καλύπτουν εγγραφές
-
+	<div id="periodostext"><i class="far fa-calendar-check"></i>
+	<u>Περίοδος εγγραφών</u> <br>
+  Από <%= startDate %> <br> Έως <%= lastDate %>
+      </div>
 </div>
 
 <div id="update">
-	<i class="far fa-edit"></i>
-	Ημερομηνία Τελευταίας Τροποποίησης
+	<div id="updatetext"><i class="far fa-edit"></i>
+	<u>Ημερομηνία Τελευταίας Τροποποίησης:</u> 
+  <%= date %>
+</div>
 
 </div>
 
@@ -68,8 +85,31 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </div>
 
 <div id="leaderboard">
-	<i class="fas fa-crown" style="color:gold"></i>
-	Leaderboard
+  <i class="fas fa-crown" style="color:gold"></i>
+  <b> Leaderboard</b>
+  <ol style="position: absolute; left: 1px;">
+      <li style="color:gold"><i class="fas fa-medal"></i></li>
+      <li style="color:silver"><i class="fas fa-medal"></i></li>
+      <li style="color:brown"><i class="fas fa-medal"></i></li>
+      <li></li>
+      <li></li>
+
+  </ol>
 </div>
+
+ <div id="filter">
+            <p id="parag1">Επιλογή ημερομηνίας</p><br>
+            <label for="startdate">Από</label>
+            <input type="date" name="startdate">
+            <label for="enddate">Έως</label>
+            <input type="date" name="enddate"><br><br>
+            <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+
+
+
+    </div>
+
+
+
 </body>
 </html>
