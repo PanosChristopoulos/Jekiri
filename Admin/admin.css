@@ -43,7 +43,7 @@ h1{
   width:300px;
   border-radius: 25px;
   left: 20px;
-  top: 150px;
+  top: 200px;
   padding:25px;
   box-shadow: 0px 0px 14px #000000;
 
@@ -53,8 +53,8 @@ h1{
 
 #map{
 position: absolute;
-    height: 700px;
-    width: 700px;
+    height: 750px;
+    width: 750px;
     /* top: 220px; */
     /* bottom: 20px; */
     left: 500px;
@@ -114,7 +114,6 @@ select:hover{
   cursor: pointer;
 }
 
-
 @media only screen and (max-width: 1000px){
 
 body{
@@ -126,7 +125,7 @@ display: block;}
   
   
   padding:10px 0px;
-  font-size:20px;
+  font-size:38px;
   text-decoration:none;
   letter-spacing:2px;
   
@@ -140,11 +139,9 @@ display: block;}
 #map{
 
     height: 1000px;
-    /* width: 300px; */
-    /* top: 220px; */
-    /* bottom: 20px; */
-    left: 0px;
-    right: 0px;
+   width: 1000px;
+    left: 5px;
+    top: 1450px;
     font-size: 35px;
     
   }
@@ -154,6 +151,46 @@ display: block;}
   padding:100px;
   
 }
-   
+#filter{
+  position: absolute;
+  background-color:lavender;
+  width:600px;
+  border-radius: 25px;
+  top: 250px;
+  padding:25px;
+  box-shadow: 0px 0px 14px #000000;
+  left:170px;
+  font-size: 30px;
+}
+ #month1{
+  font-size: 40px;
+ }
+ #month2{
+  font-size: 40px;
+ }
+  #day1{
+    font-size: 40px;
+  }
+  #day2{
+    font-size: 40px;
+  }
+  input[type=number]{
+    font-size: 40px;
+  }
 
+
+button[type=submit]{
+  border-radius: 0px;    
+  padding:20px;
+  background-color: #2196F3;
+  position: relative;
+  border-radius: 25px;
+  font-size: 30px;
+}
+
+button[type=submit]:hover {
+  background-color: #8c8927;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
 }

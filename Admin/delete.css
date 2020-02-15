@@ -21,7 +21,7 @@ h1{
 .btn{
   color:#999;
   background:rgba(0, 0, 0, 0.5);
-  padding:25px 70px;
+  padding:15px 40px;
   font-size:12px;
   text-decoration:none;
   letter-spacing:2px;
@@ -32,10 +32,9 @@ h1{
   border:none;
   background:rgba(0, 0, 0, 0.4);
   background:#fff;
-  padding:40px 85px; #000;
+  padding:25px 60px; #000;
   color:#1b1b1b;
 }
-
 h2{
 margin-top:100px;
 color:white;
@@ -73,13 +72,15 @@ body{
 display: block;}
 
 
+
 .btn{
   
   
-  padding:20px 10px;
-  font-size:23px;
+  padding:10px 0px;
+  font-size:40px;
   text-decoration:none;
   letter-spacing:2px;
+  
  
 }
 .btn:hover{
@@ -87,7 +88,6 @@ display: block;}
   padding:40px 20px; #000;
  
 }
-
 
 
 h2{
