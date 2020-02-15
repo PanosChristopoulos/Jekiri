@@ -21,36 +21,111 @@
     <a href="" class="btn"><i class="fas fa-sign-out-alt"></i>Αποσύνδεση</a>
 
     <div id="filter">
-       <h2>Επιλογή Εγγραφών</h2>
-        <label for="startdate">Από</label>
-        <input type="datetime-local" name="startdate"> <br>
-        <label for="enddate">Έως</label>
-        <input type="datetime-local" name="enddate" ><br><br>
-        <h2>Τύπος Δραστηριότητας</h2>
-      <!--  <input list="activity">
-        <datalist id="activity">
-            <option value="Αυτοκίνητο">
-            <option value="Ποδήλατο">
-            <option value="Περπάτημα">
-            <option value="Τρέξιμο">
-            <option value="Ακινησία">
-          </datalist>--> 
-          <input type="checkbox" onclick="toggle(this);" />Επιλογή όλων<br />
-          <input type="checkbox" id="activity1" name="activity1" value="vehicle" >
-          <label for="activity1"> Όχημα</label>
-          <input type="checkbox" id="activity2" name="activity2" value="bike">
-          <label for="activity2"> Ποδήλατο</label>
-          <input type="checkbox" id="activity3" name="activity3" value="walking" >
-          <label for="activity3"> Περπάτημα</label>
-          <input type="checkbox" id="activity4" name="activity4" value="running" >
-          <label for="activity4"> Τρέξιμο</label>
-          <input type="checkbox" id="activity5" name="activity5" value="still" >
-          <label for="activity5"> Ακινησία</label><br>
-        <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
-
-
-
-</div>
+    
+      <h3>Έτος</h3  >
+      <input type="number" placeholder="2010" min="2010" max="2020" value="2010">
+      <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+      </script>-
+      <input type="number" placeholder="2020" min="2010" max="2020" value="2020">
+      <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+      </script> <br> 
+      <h3>Μήνας</h3>
+      
+           <select name="month1" id="month1">
+               <option label="Ιανουάριος" value="00">00</option>
+               <option label="Φεβρουάριος" value="01">01</option>
+               <option label="Μάρτιος" value="02">02</option>
+               <option label="Απρίλιος" value="03">03</option>
+               <option label="Μάιος" value="04">04</option>
+               <option label="Ιούνιος" value="05">05</option>
+              <option label="Ιούλιος" value="06">06</option>
+              <option label="Αύγουστος" value="07">07</option>
+              <option label="Σεπτέμβριος" value="08">08</option>
+                <option label="Οκτώβριος" value="09">09</option>
+                <option label="Νοέμβριος" value="10">10</option>
+                <option label="Δεκέμβριος" value="11">11</option>
+           </select>
+      -
+           <select name="month2" id="month2">
+            <option label="Ιανουάριος" value="00">00</option>
+            <option label="Φεβρουάριος" value="01">01</option>
+            <option label="Μάρτιος" value="02">02</option>
+            <option label="Απρίλιος" value="03">03</option>
+            <option label="Μάιος" value="04">04</option>
+            <option label="Ιούνιος" value="05">05</option>
+           <option label="Ιούλιος" value="06">06</option>
+           <option label="Αύγουστος" value="07">07</option>
+           <option label="Σεπτέμβριος" value="08">08</option>
+             <option label="Οκτώβριος" value="09">09</option>
+             <option label="Νοέμβριος" value="10">10</option>
+             <option label="Δεκέμβριος" value="11" selected>11</option>
+        </select>
+      
+        <h5>Ημέρα</h5>
+      
+        <select name="day1" id="day1">
+              <option label="Κυριακή" value="00">00</option>
+               <option label="Δευτέρα" value="01">01</option>
+               <option label="Τρίτη" value="02">02</option>
+               <option label="Τετάρτη" value="03">03</option>
+               <option label="Πέμπτη" value="04">04</option>
+               <option label="Παρασκευή" value="05">05</option>
+              <option label="Σάββατο" value="06">06</option>
+      
+        </select> - 
+      
+        <select name="day2" id="day2">
+          <option label="Κυριακή" value="00">00</option>
+           <option label="Δευτέρα" value="01">01</option>
+           <option label="Τρίτη" value="02">02</option>
+           <option label="Τετάρτη" value="03">03</option>
+           <option label="Πέμπτη" value="04">04</option>
+           <option label="Παρασκευή" value="05">05</option>
+          <option label="Σάββατο" value="06" selected>06</option>
+      
+      </select>
+      
+      <h3>Ώρα</h3  >
+        <input type="number" placeholder="00" min="00" max="23" value="00">
+        <script>
+          document.querySelector("input[type=number]")
+          .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+        </script>-
+        <input type="number" placeholder="23" min="0" max="23" value="23">
+        <script>
+          document.querySelector("input[type=number]")
+          .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+        </script> 
+      
+      <h2>Τύπος Δραστηριότητας</h2>
+         <!--  <input list="activity">
+           <datalist id="activity">
+               <option value="Αυτοκίνητο">
+               <option value="Ποδήλατο">
+               <option value="Περπάτημα">
+               <option value="Τρέξιμο">
+               <option value="Ακινησία">
+             </datalist>--> 
+             <input type="checkbox" onclick="toggle(this);" checked />Επιλογή όλων<br />
+             <input type="checkbox" id="activity1" name="activity1" value="vehicle" checked >
+             <label for="activity1"> Όχημα</label>
+             <input type="checkbox" id="activity2" name="activity2" value="bike" checked>
+             <label for="activity2"> Ποδήλατο</label> <br>
+             <input type="checkbox" id="activity3" name="activity3" value="walking" checked>
+             <label for="activity3"> Περπάτημα</label>
+             <input type="checkbox" id="activity4" name="activity4" value="running" checked>
+             <label for="activity4"> Τρέξιμο</label>
+             <input type="checkbox" id="activity5" name="activity5" value="still" checked>
+             <label for="activity5"> Ακινησία</label><br>
+           <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+      
+      
+      
+      </div>
 
 
 <div id="map">Χάρτης</div>
