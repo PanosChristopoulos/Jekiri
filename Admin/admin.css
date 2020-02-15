@@ -38,15 +38,14 @@ h1{
 
 
 #filter{
-  margin: auto;
-  width: 50%;
-  position: relative;
+  position: absolute;
   background-color:lavender;
   width:300px;
   border-radius: 25px;
-  margin-top:100px;
+  top: 150px;
   padding:25px;
   box-shadow: 0px 0px 14px #000000;
+  left:0px;
 }
 
 
@@ -57,9 +56,9 @@ position: absolute;
     /* width: 300px; */
     /* top: 220px; */
     /* bottom: 20px; */
-    left: 210px;
+    left: 500px;
     right: 200px;
-    margin-top: 100px;
+    top:150px;
     margin-bottom: 40px;
     border: 1px groove black;
     background-color: white;
@@ -92,10 +91,11 @@ display: block;}
 .btn{
   
   
-  padding:20px 10px;
-  font-size:23px;
+  padding:10px 0px;
+  font-size:20px;
   text-decoration:none;
   letter-spacing:2px;
+  
  
 }
 .btn:hover{
