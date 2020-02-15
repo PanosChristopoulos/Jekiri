@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title>Administrator</title>
-	<link rel="stylesheet" type="text/css" href="admin.css">
+	<meta name="vieport"content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="admin.css"> 
+  <script src="admin.js"></script>
 	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+
 
     
     <a href="admin.html" class="btn"><i class="fa fa-map" aria-hidden="true"></i>    Χάρτης</a>
@@ -15,7 +18,41 @@
     <a href="export.html" class="btn"><i class="fa fa-download" aria-hidden="true"></i>
     Εξαγωγή</a>
     <a href="delete.html" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i>    Διαγραφή</a>
-    
+    <a href="" class="btn"><i class="fas fa-sign-out-alt"></i>Αποσύνδεση</a>
+
+    <div id="filter">
+       <h2>Επιλογή Εγγραφών</h2>
+        <label for="startdate">Από</label>
+        <input type="datetime-local" name="startdate"> <br>
+        <label for="enddate">Έως</label>
+        <input type="datetime-local" name="enddate" ><br><br>
+        <h2>Τύπος Δραστηριότητας</h2>
+      <!--  <input list="activity">
+        <datalist id="activity">
+            <option value="Αυτοκίνητο">
+            <option value="Ποδήλατο">
+            <option value="Περπάτημα">
+            <option value="Τρέξιμο">
+            <option value="Ακινησία">
+          </datalist>--> 
+          <input type="checkbox" onclick="toggle(this);" />Επιλογή όλων<br />
+          <input type="checkbox" id="activity1" name="activity1" value="vehicle" >
+          <label for="activity1"> Όχημα</label>
+          <input type="checkbox" id="activity2" name="activity2" value="bike">
+          <label for="activity2"> Ποδήλατο</label>
+          <input type="checkbox" id="activity3" name="activity3" value="walking" >
+          <label for="activity3"> Περπάτημα</label>
+          <input type="checkbox" id="activity4" name="activity4" value="running" >
+          <label for="activity4"> Τρέξιμο</label>
+          <input type="checkbox" id="activity5" name="activity5" value="still" >
+          <label for="activity5"> Ακινησία</label><br>
+        <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+
+
+
+</div>
+
+
 <div id="map">Χάρτης</div>
 </body>
 </html>
