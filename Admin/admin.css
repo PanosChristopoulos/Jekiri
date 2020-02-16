@@ -18,6 +18,14 @@ h1{
   font-weight:100;
 }
 
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 0px;
+width: 100px;
+height: 40px;
+}
+
 .btn{
   color:#999;
   background:rgba(0, 0, 0, 0.5);
@@ -115,7 +123,13 @@ select:hover{
 }
 
 @media only screen and (max-width: 1000px){
-
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 0px;
+width: 200px;
+height: 80px;
+}
 body{
  
 display: block;}

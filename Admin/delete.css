@@ -17,6 +17,13 @@ h1{
   color:#c0c0c0;
   font-weight:100;
 }
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 0px;
+width: 100px;
+height: 40px;
+}
 
 .btn{
   color:#999;
@@ -66,18 +73,22 @@ color:white;
 
 }
 @media only screen and (max-width: 1000px){
-
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 0px;
+width: 200px;
+height: 80px;
+}
 body{
- 
-display: block;}
-
-
+  width: 1000px;
+}
 
 .btn{
   
   
   padding:10px 0px;
-  font-size:40px;
+  font-size:34px;
   text-decoration:none;
   letter-spacing:2px;
   
