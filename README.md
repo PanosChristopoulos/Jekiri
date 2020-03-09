@@ -1,5 +1,6 @@
-# Jekiri
+
 ![Jekiri](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/JekiriLogo.png)
+
 Crowdsourcing Application using Google Location Data for Patras crowding issues
 
 ## Authors
