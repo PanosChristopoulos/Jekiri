@@ -7,6 +7,12 @@ html {
   width: 960px;
 }
 
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 91px;
+
+}
 
 #header {
   height: 60px;
@@ -77,21 +83,22 @@ html {
   padding: 6px;
   font-size: 16px;
   border: none;
-  cursor: pointer;
   border-radius: 25px;
   margin-right: 10px;
 }
 
 .sidebar {
+  
   width: 210px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
-  top: 100px;
+  top: 350px;
   left: 30px;
   background: #000000;
   overflow-x: hidden;
   padding: 40px;
   border-radius: 25px;
+
 }
 
 
@@ -170,3 +177,178 @@ input[type=submit]:hover {
   width: 500px;
 
 }
+
+@media only screen and (max-width: 1000px){
+#logo{
+  position: absolute;
+    left: 0px;
+    top: 91px;
+height: 100px;
+width: 350px;
+}
+
+#header {
+  height: 60px;
+  margin-right: 100px;
+  border: : 2px solid #2196F3;
+  float:right;
+  padding: 10px;
+ padding-left: 100px;
+}
+
+#datetimebox{
+  background-color: #2196F3;
+  color: white;
+  padding: 6px;
+  font-size: 50px;
+  border: none;
+  border-radius: 25px;
+  float:left;
+  margin-right: 10px;
+}
+.dropbtn {
+  background-color: #2196F3;
+  color: white;
+  padding: 6px;
+  font-size: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  float:right;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 24px 32px;
+  text-decoration: none;
+  display: block;
+  font-size: 40px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+#username{
+  float: left;
+  background-color: #2196F3;
+  color: white;
+  padding: 6px;
+  font-size: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.sidebar {
+  width: 700px;
+  position: absolute;
+  z-index: 1;
+  top: 300px;
+  left: 100px;
+  background: #000000;
+  overflow-x: hidden;
+  padding: 40px;
+  border-radius: 25px;
+}
+
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 60px;
+  color: #2196F3;
+  display: block;
+  text-align: center;
+}
+
+
+.sidebar a:hover {
+  color: #064579;
+}
+
+.main {
+  margin-left: 140px; 
+  font-size: 60px; 
+  padding: 0px 10px;
+}
+
+
+.contacthead{
+  padding:80px;
+  width: 800px;
+  position: absolute;
+  top:750px;
+  left:35px;
+  background-image: url("contact.jpg");
+  background-size: cover;
+  text-align: right;
+  font-size:20px;
+  border-radius: 0px 0px 30px 30px;
+  height: 100px;
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 40px;
+}
+
+input[type=submit] {
+  background-color: #0c36cf;
+  color: white;
+  padding: 24px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px 0;
+  font-size: 40px;
+}
+
+input[type=submit]:hover {
+  background-color: black;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+.container {
+  position: absolute;
+  top:1050px;
+  left:55px;
+  border-radius: 5px;
+  padding: 20px;
+  height: 400px;
+  width: 900px;
+  font-size: 50px;
+
+  }
+  }
