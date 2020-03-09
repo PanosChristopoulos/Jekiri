@@ -1,15 +1,96 @@
 
 <html>
 <head>
-	<meta charset="utf-8">
 	<title>Upload</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
 	
-</head>
-<body>
-<form method="POST" enctype = "multipart/form-data" action="/user/upload">
-<input type="file"  name ="filef" />
-<input type="submit" name="upload" />
-</form>
+	<script src="/Map2.js"></script>
+	<base href="/">
+	<link rel="stylesheet" type="text/css" href="upload.css">
 
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+</head>
+<body onload="return createMap2()">
+<img src="JekiriLogo.png" id="logo" >
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" >
+  <i class="fas fa-user-circle"></i>
+  <%= name %>
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="/user/help">Βοήθεια</a>
+  <a href="/user/info">Πληροφορίες</a>
+  <a href="/user/credits">Credits</a>
+  <a href="/user/logout">Logout     <i class="fas fa-sign-out-alt"></i></a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="/user"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="/user/stats"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="/user/upload"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="/user/contact"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+<div class="uploadhead"> 
+</div>
+
+<form method="POST" enctype = "multipart/form-data" action="/user/upload">
+        <input type="file"  name ="filef" id="file" >
+        <label for="file" id="filelabel">Επιλέξτε ένα αρχείο .json <i class="fas fa-file-import"></i>  </label>
+        
+
+
+
+<div class="uploadhelp">
+  <h3>Βοήθεια</h3>
+  <ul>
+    <li>Συνδεθείτε στο <a href="takeout.google.com">Google Takeout</a></li>
+    <li>Στην καρτέλα "Επιλέξτε δεδομένα για συμπερίληψη" πατήστε Κατάργηση επιλογής όλων</li>
+    <li>Στη συνέχεια, επιλέξτε το στοιχείο Ιστορικό Τοποθεσίας</li>
+    <li>Επιλέξτε "Δημιουργία Αρχείου</li>
+    <li>Το αρχείο βρίσκεται στο mail σας, αποσυμπιέστε το και διαλέξτε το αρχείο <br> .json του ιστορικού περιήγησης στο παράθυρο που θα ανοίξει πατώντας <br> το παρακάτω κουμπί</li>
+  </ul>
+
+</div>
+<h3 class="jsondatamaphelp">
+  Στον παρακάτω χάρτη μπορείτε να επιλέξετε ποιά δεδομένα <br> επιθυμείτε να  παρέχετε στην εφαρμογή
+
+
+</h3>
+<div class="jsondatamap" id = "mapid2">
+  
+  
+</div>
+
+<button type="submit" class="SubmitButton">
+  Αποδοχή <i class="far fa-check-circle"></i>
+</button>
+</form>
 </body>
 </html>

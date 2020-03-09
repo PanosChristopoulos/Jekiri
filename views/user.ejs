@@ -9,6 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
   <script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
   <script src="Map.js"></script>
+   <script src="putReq.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
   <link rel="stylesheet" type="text/css" href="user.css">
@@ -19,7 +21,7 @@
     
 
 </head>
-<body>
+<body onload="return createMap()">
 
   <img src="JekiriLogo.png" id="logo" >
 
@@ -35,7 +37,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 
 </div>
-<div id="username" onclick="location.href = '/user/userprof';">
+<div id="username" >
 	<i class="fas fa-user-circle"></i>
 	<%= name %>
 </div>
@@ -45,6 +47,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
   <a href="/user/help">Βοήθεια</a>
   <a href="/user/info">Πληροφορίες</a>
   <a href="/user/credits">Credits</a>
+  <a href="/user/logout">Logout     <i class="fas fa-sign-out-alt"></i></a>
   </div>
 
 </div>
@@ -59,7 +62,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 <div id="score">
   <div  id="ecofitso">
-	<i class="fab fa-pagelines" style="color:green" ></i> <br>
+  <i class="fab fa-pagelines" style="color:green" ></i> <br>
   <b>Μηνιαίο <br> eco-Score <br> </b>
   <div style="font-size: 25px"><%= eco %> % </div>
   </div>
@@ -67,8 +70,8 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 <div id="periodos">
 	<div id="periodostext"><i class="far fa-calendar-check"></i>
-	<u>Περίοδος εγγραφών</u> <br>
-  Από <%= startDate %> <br> Έως <%= lastDate %>
+	Περίοδος που καλύπτουν εγγραφές
+  From <%= startDate %>  Until <%= lastDate %>
       </div>
 </div>
 
@@ -81,34 +84,39 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 </div>
 
 <div class="mapbutton" id="mapid">
-	<button onclick=" return createMap()" class="maptrigger" ><i class="fas fa-map-marked-alt"></i><br>Είσοδος στο Χάρτη</button>
+	
 </div>
 
 <div id="leaderboard">
   <i class="fas fa-crown" style="color:gold"></i>
   <b> Leaderboard</b>
   <ol style="position: absolute; left: 1px;">
-      <li style="color:gold"><i class="fas fa-medal"></i></li>
-      <li style="color:silver"><i class="fas fa-medal"></i></li>
-      <li style="color:brown"><i class="fas fa-medal"></i></li>
-      <li></li>
-      <li></li>
+      <li style="color:gold"><i class="fas fa-medal"></i><%= firstName %> <%= firstEco %> % </li>
+      <li style="color:silver"><i class="fas fa-medal"></i><%= secondName %> <%= secondEco %> %</li>
+      <li style="color:brown"><i class="fas fa-medal"></i><%= thirdName %> <%= thirdEco %> %</li>
+      
 
+      <div id="leaderfitso">
+      <b>
+       Η θέση μου: <%= myPlace %> <br> Το eco-score μου: <br> <%= myEco %> %
+      </b>
+</div>
   </ol>
 </div>
-
+<form id="myform",action="/user", method="GET">
  <div id="filter">
             <p id="parag1">Επιλογή ημερομηνίας</p><br>
             <label for="startdate">Από</label>
-            <input type="date" name="startdate">
+            <input type="date" id="startdate" name="startdate">
             <label for="enddate">Έως</label>
-            <input type="date" name="enddate"><br><br>
-            <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+            <input type="date" id="enddate" name="enddate"><br><br>
+            
+            <button type= "submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
 
 
 
     </div>
-
+ </form>
 
 
 </body>

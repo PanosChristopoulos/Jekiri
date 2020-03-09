@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Αρχική</title>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="user.css">
+
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+    
+
+</head>
+<body>
+
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = 'userprof.html';">
+	<i class="fas fa-user-circle"></i>
+	Username
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="help.html">Βοήθεια</a>
+  <a href="info.html">Πληροφορίες</a>
+  <a href="credits.html">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+<div id="score">
+	<i class="fab fa-pagelines" style="color:green" ></i>
+	Μηνιαίο Score
+</div>
+
+<div id="periodos">
+	<i class="far fa-calendar-check"></i>
+	Περίοδος που καλύπτουν εγγραφές
+
+</div>
+
+<div id="update">
+	<div id="updatetext"><i class="far fa-edit"></i>
+	<u>Ημερομηνία Τελευταίας Τροποποίησης:</u> Thu, 06 Feb 2020 22:38:04 GMT
+</div>
+
+</div>
+
+<div class="mapbutton">
+	<button class="maptrigger" ><i class="fas fa-map-marked-alt"></i><br>Είσοδος στο Χάρτη</button>
+</div>
+
+<div id="leaderboard">
+	<i class="fas fa-crown" style="color:gold"></i>
+	Leaderboard
+</div>
+
+ <div id="filter">
+            <p id="parag1">Επιλογή ημερομηνίας</p><br>
+            <label for="startdate">Από</label>
+            <input type="date" name="startdate">
+            <label for="enddate">Έως</label>
+            <input type="date" name="enddate"><br><br>
+            <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+
+
+
+    </div>
+
+
+
+</body>
+</html>

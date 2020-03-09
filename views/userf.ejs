@@ -1,0 +1,78 @@
+
+<html>
+<head>
+	<title>Αρχική</title>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
+	<script src="Map.js"></script>
+	<link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body>
+
+
+<div id="header">
+<div id="datetimebox"><i class="fas fa-calendar-day"></i>
+<span id="datetime"></span>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
+</script>
+
+
+</div>
+<div id="username" onclick="location.href = '/user/userprof';">
+	<i class="fas fa-user-circle"></i>
+	<%= name %>
+</div>
+<div class="dropdown">
+  <button class="dropbtn"><i class="far fa-question-circle"></i></button>
+  <div class="dropdown-content">
+  <a href="/user/help">Βοήθεια</a>
+  <a href="/user/info">Πληροφορίες</a>
+  <a href="/user/credits">Credits</a>
+  </div>
+
+</div>
+</div>
+
+<div class="sidebar">
+  <a href="/user"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="/user/stats"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="/user/upload"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="/user/contact"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+</div>
+
+<div id="score">
+	<i class="fab fa-pagelines" style="color:green" ></i>
+	Μηνιαίο Score
+	<%= eco %> %
+</div>
+
+<div id="periodos">
+	<i class="far fa-calendar-check"></i>
+	Περίοδος που καλύπτουν εγγραφές
+	From <%= startDate %>  Until <%= lastDate %>
+</div>
+
+<div id="update">
+	<i class="far fa-edit"></i>
+	Ημερομηνία Τελευταίας Τροποποίησης
+	<%= date %>
+
+</div>
+
+<div class="mapbutton" id="mapid">
+	<button onclick=" return createMap()" class="maptrigger" ><i class="fas fa-map-marked-alt"></i><br>Είσοδος στο Χάρτη</button>
+</div>
+
+<div id="leaderboard">
+	<i class="fas fa-crown" style="color:gold"></i>
+	Leaderboard
+</div>
+</body>
+</html>

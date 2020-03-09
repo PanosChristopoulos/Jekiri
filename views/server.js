@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+
+function contact(){
 var username = document.getElementById("fname").value;
 var email = document.getElementById("lname").value;
 var subject = document.getElementById("subject").value;
@@ -33,3 +35,4 @@ transporter.sendMail(mailOptions, function(err,data){
 
 
 })
+}

@@ -2,8 +2,9 @@
 <html>
 <head>
 	<title>Αρχική</title>
+  <base href="/">
 	<script src="https://kit.fontawesome.com/2008d86346.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="info.css">
+	<link rel="stylesheet" type="text/css" href="/info.css">
 </head>
 <body>
 
@@ -19,26 +20,27 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 
 
 </div>
-<div id="username" onclick="location.href = 'userprof.html';">
+<div id="username" >
   <i class="fas fa-user-circle"></i>
-  Username
+  <%= name %>
 </div>
 <div class="dropdown">
   <button class="dropbtn"><i class="far fa-question-circle"></i></button>
   <div class="dropdown-content">
-  <a href="help.html">Βοήθεια</a>
-  <a href="info.html">Πληροφορίες</a>
-  <a href="credits.html">Credits</a>
+  <a href="/user/help">Βοήθεια</a>
+  <a href="/user/info">Πληροφορίες</a>
+  <a href="/user/credits">Credits</a>
+  <a href="/user/logout">Logout     <i class="fas fa-sign-out-alt"></i></a>
   </div>
 
 </div>
 </div>
 
 <div class="sidebar">
-  <a href="user.html"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
-  <a href="stats.html"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
-  <a href="upload.html"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
-  <a href="contact.html"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
+  <a href="/user"> <i class="fa fa-home" style="font-size: 0.73em;"></i> Αρχική</a>
+  <a href="/user/stats"><i class="fas fa-chart-line" style="font-size: 0.73em;"></i> Στατιστικά</a>
+  <a href="/user/upload"><i class="fas fa-file-upload" style="font-size: 0.79em;"></i> Upload</a>
+  <a href="/user/contact"><i class="fas fa-mail-bulk" style="font-size: 0.71em;"></i> Επικοινωνία</a>
 </div>
 
 

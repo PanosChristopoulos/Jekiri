@@ -9,6 +9,8 @@
 <script src="https://cdn.jsdelivr.net/npm/heatmapjs@2.0.2/heatmap.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
  <script src="adminMap.js"></script>
+ <script src="postCall.js"></script>
+ <script src="admin.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
 	<link rel="stylesheet" type="text/css" href="/admin.css">
@@ -22,29 +24,118 @@
     
     <a href="/admin" class="btn"><i class="fa fa-map" aria-hidden="true"></i>    Χάρτης</a>
     <a href="/adminstats" class="btn"><i class="fa fa-line-chart" aria-hidden="true"></i>     Στατιστικά</a>
-    <a href="export.html" class="btn"><i class="fa fa-download" aria-hidden="true"></i>
+    <a href="/admin/export" class="btn"><i class="fa fa-download" aria-hidden="true"></i>
     Εξαγωγή</a>
-    <a href="delete.html" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i>    Διαγραφή</a>
-    
+    <a href="/admin/delete" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i>    Διαγραφή</a>
+   <a href="/admin/logout" class="btn"><i class="fas fa-sign-out-alt"></i>Αποσύνδεση</a>
+   
     <div id="filter">
-        <label for="startdate">Από</label>
-        <input type="month" name="startdate">
-        <label for="enddate">Έως</label>
-        <input type="month" name="enddate" ><br><br>
-        <label for="acttype">Τύπος Δραστηριότητας</label>
-        <input list="activity">
-        <datalist id="activity">
-            <option value="Αυτοκίνητο">
-            <option value="Ποδήλατο">
-            <option value="Περπάτημα">
-            <option value="Τρέξιμο">
-            <option value="Ακινησία">
-          </datalist>
-        <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
-
-
-
-</div>
+      <form  >
+      <h3>Έτος</h3  >
+      <input type="number" name="year1" placeholder="2010" min="2010" max="2020" >
+      <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+      </script>-
+      <input type="number" name="year2" placeholder="2020" min="2010" max="2020" >
+      <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+      </script> <br> 
+      <h3>Μήνας</h3>
+      
+           <select name="month1" id="month1">
+               <option label="Ιανουάριος" value="00">Ιανουάριος</option>
+               <option label="Φεβρουάριος" value="01">Φεβρουάριος</option>
+               <option label="Μάρτιος" value="02">Μάρτιος</option>
+               <option label="Απρίλιος" value="03">Απρίλιος</option>
+               <option label="Μάιος" value="04">Μάιος</option>
+               <option label="Ιούνιος" value="05">Ιούνιος</option>
+              <option label="Ιούλιος" value="06">Ιούλιος</option>
+              <option label="Αύγουστος" value="07">Αύγουστος</option>
+              <option label="Σεπτέμβριος" value="08">Σεπτέμβριος</option>
+                <option label="Οκτώβριος" value="09">Οκτώβριος</option>
+                <option label="Νοέμβριος" value="10">Νοέμβριος</option>
+                <option label="Δεκέμβριος" value="11">Δεκέμβριος</option>
+           </select>
+      -
+           <select name="month2" id="month2">
+             <option label="Ιανουάριος" value="00">Ιανουάριος</option>
+               <option label="Φεβρουάριος" value="01">Φεβρουάριος</option>
+               <option label="Μάρτιος" value="02">Μάρτιος</option>
+               <option label="Απρίλιος" value="03">Απρίλιος</option>
+               <option label="Μάιος" value="04">Μάιος</option>
+               <option label="Ιούνιος" value="05">Ιούνιος</option>
+              <option label="Ιούλιος" value="06">Ιούλιος</option>
+              <option label="Αύγουστος" value="07">Αύγουστος</option>
+              <option label="Σεπτέμβριος" value="08">Σεπτέμβριος</option>
+                <option label="Οκτώβριος" value="09">Οκτώβριος</option>
+                <option label="Νοέμβριος" value="10">Νοέμβριος</option>
+                <option label="Δεκέμβριος" value="11" selected>Δεκέμβριος</option>
+            
+        </select>
+      
+        <h3>Ημέρα</h3>
+      
+        <select name="day1" id="day1">
+              <option label="Κυριακή" value="00">Κυριακή</option>
+               <option label="Δευτέρα" value="01">Δευτέρα</option>
+               <option label="Τρίτη" value="02">Τρίτη</option>
+               <option label="Τετάρτη" value="03">Τετάρτη</option>
+               <option label="Πέμπτη" value="04">Πέμπτη</option>
+               <option label="Παρασκευή" value="05">Παρασκευή</option>
+              <option label="Σάββατο" value="06">Σάββατο</option>
+      
+        </select> - 
+      
+        <select name="day2" id="day2">
+           <option label="Κυριακή" value="00">Κυριακή</option>
+               <option label="Δευτέρα" value="01">Δευτέρα</option>
+               <option label="Τρίτη" value="02">Τρίτη</option>
+               <option label="Τετάρτη" value="03">Τετάρτη</option>
+               <option label="Πέμπτη" value="04">Πέμπτη</option>
+               <option label="Παρασκευή" value="05">Παρασκευή</option>
+              <option label="Σάββατο" value="06" selected>Σάββατο</option>
+      
+      </select>
+      
+      <h3>Ώρα</h3  >
+        <input type="number" name="hour1" placeholder="00" min="00" max="23">
+        <script>
+          document.querySelector("input[type=number]")
+          .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+        </script>-
+        <input type="number" name="hour2" placeholder="23" min="0" max="23" value="23">
+        <script>
+          document.querySelector("input[type=number]")
+          .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+        </script> 
+      
+      <h3>Τύπος Δραστηριότητας</h3>
+         <!--  <input list="activity">
+           <datalist id="activity">
+               <option value="Αυτοκίνητο">
+               <option value="Ποδήλατο">
+               <option value="Περπάτημα">
+               <option value="Τρέξιμο">
+               <option value="Ακινησία">
+             </datalist>--> 
+             <input type="checkbox" onclick="toggle(this);" checked />Επιλογή όλων<br />
+             <input type="checkbox" id="activity1" name="activity1"  checked >
+             <label for="activity1"> Όχημα</label>
+             <input type="checkbox" id="activity2" name="activity2"  checked>
+             <label for="activity2"> Ποδήλατο</label> <br>
+             <input type="checkbox" id="activity3" name="activity3"  checked>
+             <label for="activity3"> Περπάτημα</label>
+             <input type="checkbox" id="activity4" name="activity4"  checked>
+             <label for="activity4"> Τρέξιμο</label>
+             <input type="checkbox" id="activity5" name="activity5"  checked>
+             <label for="activity5"> Ακινησία</label><br>
+           <button type="submit" id="submitbutton"><i class="fas fa-check-double"></i> <br> ΑΠΟΔΟΧΗ</button>
+      
+      
+      <form/>
+      </div>
 
 <div id="mapadmin"></div>
 </body>
