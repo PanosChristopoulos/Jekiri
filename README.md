@@ -40,4 +40,7 @@ After cloning the repository, you have to browse to the application directory an
 $ node app.js
 ```
 
+### Initialization
+
+After initialization, browse to  [localhost:3000](http://localhost:3000/) and register to our system. Double hashing is used for security reasons. 
 
