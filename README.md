@@ -48,5 +48,12 @@ After initialization, browse to  [localhost:3000](http://localhost:3000/) and re
 
 ## Visualized Usage
 
+![LogIn Screen](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/screen1.png)
+
+![User Start Page](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/user.png)
+
+![Upload Page](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/upload.png)
+
+![Stats Page](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/stats.png)
 
 
