@@ -52,7 +52,6 @@ After initialization, browse to  [localhost:3000](http://localhost:3000/) and re
 
 ![User Start Page](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/user.png)
 
-![Upload Page](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/upload.png)
 
 ![Stats Page](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/stats.png)
 
