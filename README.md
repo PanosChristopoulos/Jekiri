@@ -32,7 +32,7 @@ $ curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 ```
 
-### Initialization
+## Initialization
 
 After cloning the repository, you have to browse to the application directory and after initializing MongoDB through terminal, type:
 
@@ -40,7 +40,7 @@ After cloning the repository, you have to browse to the application directory an
 $ node app.js
 ```
 
-### Initialization
+## Instructions
 
-After initialization, browse to  [localhost:3000](http://localhost:3000/) and register to our system. Double hashing is used for security reasons. 
+After initialization, browse to  [localhost:3000](http://localhost:3000/) and register to our system. Double hashing is used for security reasons. Select Upload page and get started. Further instructions lay above the upload button.
 
