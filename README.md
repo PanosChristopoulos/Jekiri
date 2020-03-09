@@ -1,4 +1,5 @@
 # Jekiri
+![Jekiri](https://github.com/PanosChristopoulos/Jekiri/blob/master/public/JekiriLogo.png)
 Crowdsourcing Application using Google Location Data for Patras crowding issues
 
 ## Authors
@@ -43,4 +44,8 @@ $ node app.js
 ## Instructions
 
 After initialization, browse to  [localhost:3000](http://localhost:3000/) and register to our system. Double hashing is used for security reasons. Select Upload page and get started. Further instructions lay above the upload button.
+
+## Visualized Usage
+
+
 
