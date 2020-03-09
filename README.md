@@ -26,3 +26,18 @@ $ sudo apt-get update
 $ sudo apt-get install -y mongodb-org
 ```
 
+For NodeJS:
+```console
+$ curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+```
+
+### Initialization
+
+After cloning the repository, you have to browse to the application directory and after initializing MongoDB through terminal, type:
+
+```console
+$ node app.js
+```
+
+
